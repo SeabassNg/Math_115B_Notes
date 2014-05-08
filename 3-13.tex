@@ -1,0 +1,48 @@
+\section*{3/13}
+  \subsection*{Gaussian integers}
+    \begin{definition}
+      If $u \in \mathbb{Z}[i]$ has a reciprocal $u^{-1} \in \mathbb{Z}[i]$, 
+      then it's a unit.
+    \end{definition}
+    So, which elements is that?
+    \begin{definition}
+      If $z \in \mathbb{Z}[i]$, $N(z) = |z|^2 = x^2 + y^2 \in \mathbb{Z}$
+      where $z = x + iy$.
+    \end{definition}
+    \underline{Note}: $N(z)$ is the number theorists norm and $|z|$ is
+      the analyst norm.\\
+    \underline{Note}: $N(z) = 0 \Leftrightarrow z = 0$.\\
+    \underline{Note}: $z | N(z)$ as Gaussian integers because $N(z) = z \cdot
+      \overline{z} = (x + iy)(x - iy)$.\\
+    \underline{Note}: $z \in \mathbb{Z}[i] \Leftrightarrow \overline{z} \in
+      \mathbb{Z}[i]$.\\
+    \underline{Note}: $N(z_1z_2) = N(z_1)N(z_2)$
+    \begin{theorem}[Unique Factorization of Gaussian integers]
+      $\mathbb{Z}[i]$ have unique factorization into Gaussian primes.
+    \end{theorem}
+    In fact, if $u$ is a unit, $z \approx uz$. $z$ and $uz$ are associates.\\\\
+    Associate primes are equivalent in the sense of factorization.\\
+    \underline{Example}: Is 2 square free in $\mathbb{Z}[i]$?\\
+      $2 = (1 + i)(1 - i)$\\
+      Are there repeats? Yes! $(1 - i) = -i(1 + i)$\\
+      Therefore, $2 = i(1 + i)^2$\\
+      Therefore, 2 is not square free.\\\\
+    Why are we caring about units? In the past, we can just restrict everything
+    to positive numbers. Now, we can't.\\
+  \subsection*{Why $\mathbb{Z}$ has unique factorization?}
+    For uniqueness, division with remainders, which led to euclidean algorithm,
+    which led to primality lemma, which led to unique factorization.\\
+    All of our implications are inevitably provided, you get it started.\\\\
+    As for the existence, you have this if elements have a size which decreases
+    when you factor.\\\\
+    Does $N(z)$ have a positive integer size such that if $z = ab$ where
+    $a,b$ are not units, so that $N(a), N(b) < N(z)?$ Yes!\\
+    $N(z) = N(a)N(b)$ and $N(a),N(b) \ge z$.\\\\
+    \underline{Example}: $2 = (1 + i)(1 - i)$ where $N(2) = 4$ and $N(1+i) = 
+    2$.\\
+  \subsection*{Division with remainders}
+    We want the following: Given $a,b \in \mathbb{Z}[i]$, $a = qb + r$ such 
+    that $N(r) < N(b)$.\\
+    In the Cartesian coordinates, multiplying by $b$ dilates by $|b|$ and
+    rotates by the angle of $b$, which is known as $Arg(b)$.\\\\
+    \underline{Example}: $b = 2 + i$.

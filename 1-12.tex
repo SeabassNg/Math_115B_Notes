@@ -1,0 +1,73 @@
+\section*{1/12}
+  \subsection*{Hensel lifting}
+    We're looking at $a(x) \equiv 0 \mod p^k$ ($n$ to $p^k$ by the Chinese 
+    Remainder Theorem)\\
+    First, look at $a(x) \equiv 0 \mod p$ which could be hard. (when $p$ is
+    small, it's not hard)\\
+    Lagrange says there is less than degree,a, solutions.\\
+    Then, work, by induction on k. The set from $k-1$ to $k$ is called "Hensel
+    listing"\\
+    Suppose $a(r) \equiv 0 \mod p^{k-1}$\\
+    If we know $r \mod p^{k-1}$, pick some choice $\mod p^k$, then all choices
+    $\mod p^k$ are $r + tp^{k-1}$ where $t$ exists for matters of $\mod p$.\\
+    I'm thinking of some $a+b*100 \mod 1000$. Then, $b$ exists for matters
+    $\mod 10$.\\
+    In general, if I have $b*k \mod n$ where $k,n$ are fixed, then $b$ exists
+    for matters $\mod \frac{n}{gcd(k,n)}$.\\
+    $b$ matters for $\mod 10$ because $1000/100 = 10$\\\\
+    \underline{Example}: $x^2 \equiv -1 \mod 5$, e.g. x = 2 works\\
+    Now, $x^2 \equiv -1 \mod 25$, Is $x \equiv 2 \mod 5$? Maybe.\\
+    If so, $x \equiv 2 + 5t \mod 25$. $t$ exists $\mod 5$.\\
+    Despite the fact that we started with non-linear equation, $t$ is still
+    linear even when lifting.\\
+    $x^2 \equiv (2+5t)^2 \equiv 4 + 20t + 25t^2 \equiv_? -1 \equiv 24 \mod 25$\\
+    Then, because 2 works $\mod 5$, $5 |$ constant parts of the equation.\\
+    Therefore, 
+    \begin{eqnarray*}
+      20t &\equiv & -5 \mod 25\\
+      4t & \equiv & -1 \mod 5\\
+      t &\equiv& -\frac{1}{4} \equiv 1 \mod 5\\
+    \end{eqnarray*}
+    So, $x \equiv 7 \mod 25$ works.\\
+    Ok... so... what about $\mod 125?$, $\mod 5^4?$\\\\
+    \fbox{
+      \begin{minipage}{7in}
+        \underline{part of Hensel's Lemma}: $a(r + tp^{k-1}) - a(r) \equiv
+        tp^{k-1}a'(r) \mod p^k$
+      \end{minipage}
+    }\\\\
+    In calculus, derivatives follows from sum and product rules and from $c' = 0$
+    and $x' = 1$ and induction. \\
+    Claim is $b(t,r) \equiv a(r+tp^{k-1}) - a(r) \mod p^k$ is "psuedo calculus" 
+    in the sense that the derivatives holds with a factor of $tp^{k-1}$\\
+    If $a(x) = c$, $b(x) = c - c = 0$.\\
+    If $a(x) = x$, $b(x) = x + tp^{k-1} - x = tp^{k-1}$\\
+    Product rule: We have $a_1(x), a_2(x), b_1(t,x), b_2(t,x)$.\\
+    Then, say $a_3(x) = a_1(x)a_2(x)$ and $b_3(t,x) = ?$\\
+    \begin{eqnarray*}
+    a_1(x + tp^{k-1}a_2(x + tp^{k-1}) 
+    &\equiv& (a_1(x) + tp^{k-1}a_1'(x))(a_2(x) + tp^{k-1}a_2'(x))\\
+    &\equiv& a_1(x)a_2(x) + tp^{k-1}(a_1'(x)a_2(x) + a_1(x)a_2'(x))\\
+    \end{eqnarray*}
+    So, Hensel's lemma 1st form is true.\\
+    The second form is how you use this to solve things.\\
+    Have $a(r) \equiv 0 \mod p^{k-1}$, where $r$ is some lift, not necessarily
+    0 $\mod p^k$\\
+    $a(r + tp^{k-1}) \equiv a(r) + tp^{k-1}a'(r) \equiv_? 0 \mod p^k$, so
+    $a'(r)t \equiv_? -\frac{a(r)}{p^{k-1}} \mod p$\\
+    Hensel's lemma says the solution $\mod p^k$ amounts to $a'(r)t \equiv
+    -\frac{-a(r)}{p^{k-1}} \mod p$\\
+    There are three cases:
+    \begin{enumerate}
+      \item $a'(r) \not\equiv 0 \mod p$, there is a unique solution for $t$. You 
+      can keep lifting forever from $p$ to $p^2$ to $\ldots$
+      \item $a'(r) \equiv 0$ and $a(r) \not\equiv 0 \mod p^k$. there is no 
+        solution.
+      \item both $\equiv 0$, $t$ can be anything. 
+    \end{enumerate}
+    \underline{Example}: $x^2 \equiv -1 \mod 5$\\
+    $a(x) = x^2 + 1$ and $a'(x) = 2x$\\
+    $x \equiv 2 \mod 5$, $a'(2) = 4 \not\equiv 0 \mod 5$, so $\exists$ a unique
+    lift $\mod 25, 125, \ldots$\\
+    Hensel also defined $p$-adic numbers, which are numbers in base $p$ with 
+    infinitely many digits to the left. 

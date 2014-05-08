@@ -1,0 +1,90 @@
+\section*{2/25}
+  \subsection*{Continued Fraction}
+    A nice corollary to continued fraction
+    \begin{theorem}
+      (by Dirchlet)\\
+      If $\alpha \not\in \mathbb{Q}$ and $\alpha \in \mathbb{R}$, then
+      $| \alpha - \frac{a}{b}| < \frac{1}{b^2}$ for infinitely many
+      $\frac{a}{b}$
+    \end{theorem}
+    \begin{theorem}
+      If $\alpha \in \mathbb{Q}$, then $\exists C$ (depends on $\alpha$ only)
+      such that $|\alpha - \frac{a}{b}|$ either is 0 or greater than $\frac{C}
+      {b}$.
+    \end{theorem}
+    \noindent\underline{Examples}: $|\pi - \frac{22}{7}| = .00012\ldots < 
+    \frac{1}{49}$\\
+    $|\sqrt{2} - \frac{3}{2}| = .08\ldots < \frac{1}{4}$, not good enough\\
+    $|\sqrt{2} - \frac{7}{5}| = .014\ldots < \frac{1}{25}$.\\
+
+    \noindent Dirchlet's theorem is proven by continuous fractions.\\
+    Say that $\frac{a}{b}$ is a record setting approximation to $\alpha$
+    if $|\alpha - \frac{a}{b}| < |\alpha - \frac{c}{d}| \forall d < b$ and
+    $\frac{a}{b} \not= \frac{c}{d}$.\\\\
+    \underline{Example}: $\sqrt{2} \approx \frac{7}{5}$\\
+    $\frac{6}{4}$, $\frac{4}{3}$, $\frac{3}{2}$, and $\frac{1}{1}$ are
+    still good approximation.\\\\
+    \begin{theorem}
+      All record setting $\frac{a}{b}$ comes from continuous fraction expansion
+      of $\alpha$.
+    \end{theorem}
+    A continuation fraction is denoted by $[a_{0}; a_1, \ldots, a_n]$ (finite) 
+    or $[a_0; a_1, \ldots]$ (infinite).\\
+    Both means that 
+    $$
+      [a_0] = a_0
+    $$
+    and 
+    $$
+      [a_0; a_1, \ldots] = a_0 + \frac{1}{[a_1, a_2, \ldots]}
+    $$
+    More rigorously, if you chop a continuous fraction to $c_k = [a_0, 
+    a_1, \ldots, a_k]$.\\
+    Then, $[a_0, a_1, \ldots]$ is by definition $\lim_{k \to \infty} c_k$.\\
+    \begin{theorem}
+      \begin{enumerate}
+        \item $\lim_{k \to \infty} c_k$ always exists
+        \item limits differ for two different continuous fractions
+        \item Every $\alpha \in \mathbb{R}$ is reached.
+      \end{enumerate}
+    \end{theorem}
+    Let's suppose all that.
+    Take $\alpha \in \mathbb{R}$. Then,
+    $$
+      \alpha = [a_0, a_1, \ldots] = a_0 + \frac{1}{a_1 + \ldots}
+    $$
+    Say $\alpha = \sqrt{7} = 2.6\ldots$\\
+    $a_0 = 2$\\
+    \underline{Rules}: $a_i > 0$ for all $i$. In $[a_0, \ldots, a_n]$, $a_n
+    >2$.\\
+    In fact, this shows part 2 by induction.\\\\
+    By this relation, if $\alpha = [a_0; a_1, a_2, \ldots]$, then
+    $\frac{1}{1 - \alpha_0} = [a_1; a_2, \ldots]$\\
+    Not a convergent. We chopped off head, not tail, so they're all unique.\\\\
+    \begin{eqnarray*}
+      \left\lfloor\sqrt{2} \right\rfloor &= & 1 \\
+      \left\lfloor\frac{1}{\sqrt{2} - 1} \right\rfloor &= & 2 \\
+      \left\lfloor\frac{1}{\frac{1}{\sqrt{2} - 1} - 2} \right\rfloor &= & 2 \\
+    \end{eqnarray*}
+    \begin{theorem}
+      If $\alpha  = \sqrt{n}$, tne remainders in continued fraction expansion
+      of $\alpha$ eventually reach $\sqrt{n} + k$ or $\frac{\sqrt{n} + k}{2}
+      \Rightarrow$ continued fraction expansion repeats.
+    \end{theorem}
+    \begin{theorem}
+      Converse is true. If continuous fraction expansion of $\alpha$ repeats,
+      then $a$ is a root of $ax^2 + bx + c = 0$, $a,b,c \in \mathbb{Z}$.\\
+      $\alpha = \frac{\sqrt{n} + d}{e}$
+    \end{theorem}
+    \begin{proof}
+      Suppose $\alpha = \frac{a}{b}$ is rational, then by the theorem,
+      continued fraction expansion of $\alpha$ terminates. In fact, it's
+      just the euclidean algorithm to compute $gcd(a,b)$. Max(a,b) in 
+      remainders keep decreasing.\\
+      \begin{eqnarray*}
+        \frac{a}{b} & = & q + \frac{r}{b} \\
+          & = & \frac{1}{\frac{b}{r}} \\
+      \end{eqnarray*}
+      where $q = \lfloor\frac{a}{b}\rfloor$.\\
+      Therefore, continued fraction expansion of $\frac{a}{b}$ terminates.
+    \end{proof}

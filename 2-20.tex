@@ -1,0 +1,69 @@
+\section*{2/20}
+  \subsection*{Irrational and transcendental numbers}
+    $\alpha \in \mathbb{R}$ is algebraic means $f(\alpha)= 0$ for some 
+    polynomial with integer coefficients.\\
+    This generalizes root constructions.\\
+    \begin{theorem}
+      If $f(\alpha) = 0$ where coefficients of $f$ are algebraic, then
+      $g(\alpha) = 0$ where coefficients are integers.
+    \end{theorem}
+    \underline{interesting ideas}: $\pi$ is not algebraic. Even though it's
+    from a circle, you use calculus to get the perimeter of the circle and
+    areas of the circle.\\
+    $\alpha$ is transcendental if it is not algebraic.\\
+    \begin{theorem}
+      Transcendental exists.
+    \end{theorem}
+    \begin{theorem}
+      $e$ and $\pi$ are transcendental.
+    \end{theorem}
+    Proving $e$ and $\pi$ are irrational is very difficult, so we won't...\\
+    \begin{theorem}
+      $2^{\pi}$ is irrational and transcendental.
+    \end{theorem}
+    No one can prove this.\\
+    Let's say that $\alpha = \frac{a}{b}$. Then, $f(\alpha) = 0$ where
+    $f(\alpha) = a - bx$, so rational numbers are algebraic.\\\\
+      Proof 1 of transcendental existence: Set $A$ of algebraic numbers is 
+      countable, but $\mathbb{R}$ is uncountable.\\
+    Computer Science approach to countability:\\
+      If $S$ is a set of elements described by finite words by a finite 
+      alphabet, then it's countable.\\
+      Order $s$ as words of length 1 in alphabetical order, then words of 
+      length 2 in alphbetical order, $\ldots$.\\
+      If $x \in S$ has many names, just use the first one.\\
+      \underline{Example}: $\mathbb{Q}$ is countable.\\
+        Alphabet: 0, 1, $\ldots$, 9, /, -.\\
+        Just use lowest term.\\
+        My dictionary: 0, 1, 2, 3, $\ldots$, 9, 10, 11, $\ldots$, 99, -1, 
+        $\ldots$, -9, 100, $\ldots$, 199, 1/2, $\ldots$, 1/9, 200, $\ldots$,
+        $\ldots$\\\\
+      $\alpha \in \mathbb{R}$, algebraic, described by a word with alphabet:
+      0, 1, $\ldots$, 9, x, +, -, ;\\
+      For the polynomials, $\sqrt{2}$ is described by $xx - 2; 2$ where $;$ is
+      the separator. The last 2 is the kth root from smallest to largest.\\
+      $xx - 2;2$ means 2nd root of $x^2 - 2 = 0$.\\\\
+    Proof 2: If $\alpha \in \mathbb{Q}$, $|\alpha - \frac{a}{b}| > \frac{c}{b}
+     = \Omega(\frac{1}{b})$ when $\alpha \not= \frac{a}{b}$\\
+     Let $\alpha = \frac{x}{y}$. $|\frac{x}{y} - \frac{a}{b}| = \frac{|xb - ya|}
+     {by} \ge \frac{1}{by}$\\
+     \begin{theorem}
+      If $\alpha$ is algebraic number of degree $n$, $|\alpha - \frac{a}{b}|
+      \ge \frac{c}{b^n}$, so if we choose $\alpha$ very close to $\frac{a}{b}$,
+      it's transcendental.
+     \end{theorem}
+     \begin{theorem}
+      $x = .1100010000\ldots010\ldots01$\\
+      Say fourth 1 is on the 24th digit and fifth one is at 120th.\\
+      Well... $x = \sum_{n = 1}^{\infty} 10^{-n!}$.\\
+      Let $x = \frac{a}{b}$ where $b = 10^{n!}$.\\
+      Then, $|\alpha - \frac{a}{b}| \approx 10^{-(n+1)!} \le 2 \times 
+      10^{-(n+1)!}$\\
+      $|\alpha - \frac{a}{b}| \ge \frac{c}{b^n}$
+     \end{theorem}
+    \begin{proof}
+      Idea is, if $f(x)$ is a polynominal of degree $n$, with coeffcients $\in
+      \mathbb{Z}$ can bound $|f(\frac{a}{b})|$\\
+      $f(x) = x^3 - x + 1$, $|\frac{a^3}{b^3} - \frac{a}{b} + 1| = 
+      \frac{integer}{b^3} \ge \frac{1}{b^3}$.\\
+    \end{proof}

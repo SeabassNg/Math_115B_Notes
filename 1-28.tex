@@ -1,0 +1,64 @@
+\section*{1/28}
+  Computational Context (Corrected)
+  \begin{enumerate}
+    \item Discrete logartihms are hard. If $a \equiv r^x \mod p$, solving for
+      $x$.
+    \item Solving $a(x) \equiv 0 \mod p$ is not hard where degree of $a$ is
+      low. i.e. For each fixed $k$, if degree($a$) $\le k$ (*) gets harder
+      only slowly as $p$ increases. It does polynomial time in number of digits
+      of $p$, but it gets harder much faster as degree of polynomial increase.\\
+      $x^2 \equiv c \mod p$, it's fast to count or find solutions.\\
+      $x^3 \equiv c \mod p$, too and so is any $x^a \equiv c$.\\
+      $x^k - c$ is moreever a special polynomial.\\
+      Finding solutions is "Shanks-Tonelli". Counting solutions to these 
+      equations is due to Euler.
+  \end{enumerate}
+  \begin{theorem}Euler\\
+    $(\frac{a}{b}) \equiv a^{\frac{p-1}{2}} \mod p$
+  \end{theorem}
+  \begin{proof}
+    Take logarithms!\\
+    $a \equiv r^x \mod p$ where $r$ is a primitive root\\
+    We know that $(\frac{a}{p}) = \begin{cases}1 & \text{ if $x$ is even}\\ -1
+    & \text{ if $x$ is odd}\end{cases}$\\
+    $\frac{1}{2} = 1^2 \mod 2d$. Trivial case since we are looking at large 
+    prime numbers (which are odd).\\
+  $x$ exists $\mod p-1 = n$\\
+  $(x \mod 2) \frac{n}{2} = \frac{xn}{w} \times n$\\
+  So, $(r^x)^{\frac{n}{2}} = -1$ iff $x$ is odd.\\\\
+  \underline{Example}: $r = 2$ and $mod 11$\\
+  $(2^x)^5$ is 180 degee times $x$ way around the circle. so, you get
+  to top = 1 if $x$ is even and bottom = -1 if $x$ is odd.\\
+  \end{proof}
+  By some type of argument, if $k | p -1$, then $a$ has a $k$th root $mod p$
+  iff $a^{\frac{p-1}{k} } \equiv 1 \mod p$.\\
+  What were curious about with $(\frac{a}{b})$, quadratic residues.\\
+  What digits can $n^2$ end in? $0, 1, 4, 5, 6, 9$ and not the others in base
+  10.\\\\
+  I.e. For what $p$ is $(\frac{2}{p}) = 1$?\\
+  \begin{tabular}{c | c c c c c c c}
+    $\mod$& 3 & 5 & 7 & 11 & 13 & 17 & 19\\
+    \hline
+    $(\frac{2}{p})$ & -1 & -1 & 1 & -1 & -1 & 1 & -1
+  \end{tabular}
+  $6^2 \equiv 2 \mod 17$.
+  Gauss amazing 1st step to replace exponents in Euler by products, products
+  by sums.\\
+  \begin{lemma}
+    Say $p$ is odd and $a \perp p$. Then, $(\frac{a}{p} = 1$ if an even number
+    of least prime residues of $a, 2a, \ldots, \frac{p-1}{2}a$ are between
+    1(?) and $\frac{p-1}{2}$\\
+    $(\frac{a}{p}) = (-1)^{\text{number of $aj$'s that are "2nd half" $\mod p$
+    when $j$ is "1st half" $\mod p$}}$
+  \end{lemma}
+  \underline{Example}: $a = 3$, $p = 13$\\
+  \begin{tabular}{c | c   c   c   c   c   c   c  c  c   c   c   c}
+    j & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+    $aj$ & 3 & 6 & 9 & 12 & 2 & 5 & 8 & 11 & 1 & 4 & 7 & 10\\
+  \end{tabular}
+  so... $(\frac{3}{13}) = (-1)^2 = 1$.
+  Take the first $\frac{p-1}{2}$ $j$'s. Find all the residues of $aj$.
+  Count all the number of residues of these that are $> \frac{p-1}{2}$.\\
+  Idea of the proof: Compare $1 * 2 * 3 * \ldots * \frac{p-1}{2} \equiv s$ and
+  $a * 2a * 3a * \ldots * a\frac{p-1}{2} \equiv t$.\\
+

@@ -1,0 +1,50 @@
+\section*{2/23}
+  \subsection*{Prove that $e$ is irrational}
+    $$
+      e = 2 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + \ldots
+    $$
+    converges quickly.\\
+    The tail < 1/ (denominator of partial sum)\\
+    In fact, The tail $< \frac{2}{n+1} \times 1/$ denominator of partial sum.\\
+  \subsection*{2nd proof of $e$ is irrational}
+    If $\alpha \in \mathbb{Q}$, but $\alpha \not= \frac{a}{b}$.\\
+    $|\alpha - \frac{a}{b}| > \frac{constant}{b}$ contradicts
+    tail $< \frac{2}{n+1}\frac{1}{b}$.\\
+
+  \begin{theorem}
+    $\pi$ is irrational
+  \end{theorem}
+  \begin{lemma}
+    If $f(x)$ is a polynomial of degree $n$ with integer coefficients and 
+    $f(\frac{a}{b})$, then $|f(\frac{a}{b})| \ge \frac{1}{p^n}$
+  \end{lemma}
+  \begin{proof} Proof of the Lemma\\
+    Combine denomiators! Get some integer over $b^n$\\
+    i.e.$|3(\frac{a}{b})^3 - 2(\frac{a}{b}) + 7| = \frac{|3a^3 + 2ab^2 + 7b^3|}
+    {b^3} \ge \frac{1}{b^3}$\\
+    Now, let $I_n = \int_0^{\pi} \frac{x^n(\pi-x)^n}{n!}\sin(x)$.\\
+    We know that $I_n > 0$, but less than $\frac{(\frac{\pi}{2})^{2n}}{n!}$\\
+    $I_n < \frac{\pi(\frac{\pi}{2})^2n}{n!}$ as $n \to \infty$ goes to 0.\\
+    In fact, it goes very fast.
+    \begin{tabular}{c | c | c| c| c | c}
+      $n$ & 0 & 1 & 2 & 3 & 4\\
+      \hline
+      $I_n$ & 2 & 4 & $24 - 2\pi^2$ & $\ldots$ & $\ldots$
+    \end{tabular}
+  \end{proof}
+
+  \begin{lemma}
+    $I_n$ is an integer polynomial in $\pi$. In fact, in $\pi^2 \Rightarrow
+    \pi^2$ is irrational
+  \end{lemma}
+
+  \subsection*{Continued fraction}
+    $$
+      \alpha = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \ldots }}}
+    $$
+    is called the continued fraction expansion of $\alpha$.\\
+
+  \subsection*{Various theorems}
+    All continued fractions converges to different $\alpha \in \mathbb{R}$
+    and every $\alpha \in \mathbb{R}$ is reached and c.f.e of $\alpha$ is finite
+    iff $\alpha \in \mathbb{Q}$.

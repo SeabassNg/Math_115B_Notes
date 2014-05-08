@@ -1,0 +1,73 @@
+\section*{2/2}
+  \subsection*{Gauss' Lemma}
+  $(\frac{a}{b}) = (-1)^s$ where
+  \begin{eqnarray*}
+    s & = & \text{number of left-half residues $j$ such that $a_j$ is
+      right half}\\
+      & = & \sum_{j = 1}^{\frac{p-1}{2}} \lfloor \frac{a_j}{p/2} \rfloor \mod 
+        2\\
+  \end{eqnarray*}
+  \subsection*{Geometric Interpretation}
+    Let $t = \lfloor \frac{a_j}{p/2} \rfloor $ be the number of lattice
+    points inside of a triangle. (Lattice points are points with integer
+    coordinates, $(x,y)$)\\
+    The triangle has vertices, $(0,0)$, $(\frac{p}{2}, a)$, $(\frac{p}{2}, 
+    0)$\\
+    The slope of the line is $\frac{a}{p/2}$. The points on the hypotenuse is
+    $\frac{a_j}{p/2}$.\\
+    The number of dots inside the column of $a_j$ is $\lfloor \frac{a_j}{p/2}
+    \rfloor$ where $p \not| 2, a_j$.
+  \begin{lemma}
+    Also, if $a$ is odd, $s \equiv \sum_{j = 1}{\frac{p-1}{2}}
+      \lfloor \frac{a_j}{p} \rfloor \mod 2$
+  \end{lemma}
+  Want to show: $(\frac{p}{q})(\frac{q}{p}) = (-1)^{\frac{p-1}{2}
+  \frac{q-1}{2}}$.\\
+  Let $t_1 = \sum_{j = 1}^{\frac{p-1}{2}} \lfloor \frac{qj}{p} \rfloor$\\
+    $t_2 = \sum_{j = 1}^{\frac{q-1}{2}} \lfloor \frac{pj}{q} \rfloor$\\
+  Then, $(\frac{p}{q}) = (-1)^{t_1}$ and $(\frac{q}{p}) = (-1)^{t_2}$
+  by Eisenstein's Lemma.\\
+  $(\frac{p}{q})(\frac{q}{p}) = (-1)^{t_1 + t_2} =_? (-1)^{\frac{p-1}{2} \times
+  \frac{q-1}{2}}$\\
+  Using the geometric Interpretation again...\\
+  Think of a rectangle with x-length, $\frac{p}{2}$, and y-length, 
+  $\frac{q}{2}$. Let there be a diagonal of the rectangle with slope
+  $\frac{q}{p}$. Count the lattice points. Bottom triangle has $t_1$ lattice
+  points and upper triangle has $t_2$ lattice points.\\
+  The total number of lattice points in the rectangle is 
+  $\frac{p-1}{2}\frac{q-1}{2}$. The reason is because there is $\lfloor
+  \frac{qj}{p} \rfloor$ on the columns of bottom triangle with endpoint on 
+  hypotenuse and $\lfloor \frac{pj}{q} \rfloor$ dots in row.\\\\
+  The only thing missing is a proof of Eisenstein's lemma itself.\\
+  \begin{lemma}
+    Also, if $a$ is odd, $s \equiv \sum_{j = 1}{\frac{p-1}{2}}
+      \lfloor \frac{a_j}{p} \rfloor \mod 2$
+  \end{lemma}
+  \underline{Conjecture}: number of $j$'s such that $\lfloor \frac{aj}{p} \rfloor$ is odd. 
+  Working $\mod 2$\\
+  $a \equiv p \equiv 1$. Also, $"+ \equiv -"$\\
+  Following book, write $aj = p \lfloor \frac{aj}{p} \rfloor$ + remainder.\\
+  The remainder is either $1 \le u \le \frac{p-1}{2}$\\
+  What the remainders do: $r = aj \% p$, so as in Gauss' lemma, get each $u$ 
+  once.\\
+  Get $p$ $s$ times \\
+  So, let's sum $aj = p \lfloor \frac{aj}{p} + $ remainder over $1 \le j \le
+  \frac{p-1}{2}$\\
+  $\sum_{1}^{\frac{p-1}{2}} aj = p\sum_{j = 1}^{\frac{p-1}{2}}\lfloor
+  \frac{a_j}{p} \rfloor + p \times s + \sum_{u = 1}^{\frac{p-1}{2}} u \mod 2$\\
+  You are then left with
+  $\sum_{j = 1}^{\frac{p-1}{2}} \lfloor \frac{aj}{p} \rfloor + s \equiv 0 \mod 
+  2$, so
+  $s \equiv \sum_{j = 1}^{\frac{p-1}{2}} \lfloor \frac{aj}{p} \rfloor =
+  $ Eisenstein's sum $\mod 2$.\\\\
+  So, where now?\\
+  Want Euclidean-style algorithm to compute $(\frac{a}{p})$, but what if
+  $a$ isn't prime? Then, $(\frac{ab}{p}) = (\frac{a}{p})(\frac{b}{p})$, so
+  if you can factor top, you're ok.\\
+  \begin{definition}
+    ($\frac{a}{n}$), the Jacobi symbol is by definition $(\frac{a}{n}) = 
+    \Pi_{k} (\frac{a}{p_k})^{l_k}$ if $n = p_1^{l_1} \ldots p_m^{l_m}$\\
+  \end{definition}
+  Not really comming from $\mod n$ arithmetic. Doesn't solve $a \equiv x^2 
+  \mod n$ or count solutions.\\
+  It is defined, so that $(\frac{a}{b})(\frac{b}{a}) = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}$ when $a,b$ both are odd, even if composite

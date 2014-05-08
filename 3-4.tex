@@ -1,0 +1,98 @@
+\section*{3/4}
+  $\alpha \approx \frac{a}{b}$ is "best" means that $\alpha - \frac{a}{b}| >
+  |\alpha - \frac{c}{d}| \Rightarrow d > b$.\\
+  \begin{theorem}
+    If $C_k = \frac{s_k}{t_k}$ is a convergent of $\alpha$, then it is the
+    best. In fact, if there exists $\frac{a}{b}$ is better, $b \ge t_{k+1}$\\
+  \end{theorem}
+  An even better theorem
+  \begin{theorem}
+    $|t_k \alpha - s_k| > |b\alpha - a| \Rightarrow b \ge t_{k +1 }$\\
+    If $b < s_k$ and $|t_k\alpha - s_k| > |b\alpha - a|$, then
+    this is weaker than $\frac{a}{b}$ being closer
+  \end{theorem}
+  \subsection*{Periodic continued fractions}
+    Suppose $\alpha = [a_0; a_1, a_2, \ldots, \overline{b_1, \ldots, b_l}]$.\\
+    Then, what can $\alpha$ be? The right side does converge can use this solve
+    for $\alpha$.\\
+    \begin{lemma}
+      $f(x) = [a_0; a_1, \ldots, x]$ is a fractional linear transformation.
+    \end{lemma}
+    \begin{proof}
+      $$
+        a_k + \frac{1}{x} = \frac{a_kx + 1}{bx + 0}
+      $$
+    \end{proof}
+    Is 1 over a fractional linear transformation a fractional linear 
+    transformation? Yes\\
+    Is $a + $ fractional linear transformation a fractional linear 
+    transformation? Yes\\
+    \begin{eqnarray*}
+      a + \frac{jx + k}{lx + m} & = & \frac{a(lx + m) + jx + k}{lx + m}\\
+        & = & \frac{x (al + j) + (am + k)}{ lx + m}
+    \end{eqnarray*}
+    \underline{Case 1}: $\alpha = [b_0; b_1, \ldots, b_l]$, so
+    $$
+      \alpha = b_0 + \frac{1}{b_1 + \frac{1}{1 + \vdots + \frac{1}{b_l + 
+      \frac{1}{\alpha}}}} = \frac{a \alpha + b}{c \alpha + d}
+    $$
+    by the lemma.\\
+    $\alpha$ is a root of $x = \frac{ax + b}{cx+d}$, which is approximate to
+    a quadratic equation.\\\\
+    \underline{General case}:
+    If $[b_0; b_1, \ldots, b_l] = \frac{a + b\sqrt{n}}{c}$.\\
+    Let $\alpha = [a_0, a_1, \ldots, a_k, \frac{a + b \sqrt{n}}{c}]$.\\
+    \begin{lemma}
+      $\alpha$ is then also a quadratic irrational.
+    \end{lemma}
+    \begin{proof}
+      $\frac{a + b\sqrt{n}}{c}$ is a quadratic irrational.\\
+      Then, is $d + $ a quadratic irrational $ = $ a quadratic irrational?\\
+      $$
+        d + \frac{a + b\sqrt{n}}{c} = \frac{(a+cd) + b\sqrt{n}}{c}
+      $$
+      Is $\frac{1}{\text{quadratic irrational}} = 
+        \text{quadratic irrational}$?\\
+      $$
+        \frac{c}{a + b\sqrt{n}} = \frac{(a - b\sqrt{n})c}{a^2 - b^2n}
+      $$
+      Yes!
+      Therefore, by induction...
+    \end{proof}
+  \subsection*{Diophantine equations}
+    Have some polynomial equations, in some variables.\\
+    $x^2 + y^2 = z^2$, $x^2 + y^2 = z$, $x^3 + y^3 = z^3$, $x^2 + y^2 + z^2 = 
+    w$, $x^2 + y^2 + z^2 + w^2 = t$\\\\
+    \begin{theorem}
+      It is impossible to analyze a general Diophantine equation.
+    \end{theorem}
+    \begin{proof}
+      The difficulty of this problem is too much for us.
+    \end{proof}
+    \begin{theorem}
+      If $A$ is a formal math conjecture, then there exists a polynomial,
+      $p_A(x_1, \ldots x_k) = 0$, computable directly from $A$ that has 
+      solutions in $\mathbb{Z}$ iff A is true.
+    \end{theorem}
+    \begin{theorem}
+      If $A$ is a formal computer program, then there exists a $p_A(x_1, \ldots
+      x_n)$ whose positive values, $x_1, \ldots, x_n \in \mathbb{Z}$ are
+      the output of $A$.
+    \end{theorem}
+    We have $x^2 + y^2 = z^2$ where $x, y, z \in \mathbb{Z}$. These are called
+    Pythagorean triples.\\
+    Without loss of generality, let's just consider $x,y,z > 0$.\\
+    We want $gcd(x,y,z) = 1$ because otherwise, this is just trivial. The
+    triples with $gcd(x,y,z) = 1$ are called \underline{primitives}.\\\\
+    \underline{A plan}: 
+    $$
+      (n+1)^2 - n^2 = 2n + 1
+    $$
+    sometimes that odd number on the right are squares.\\
+    \underline{Examples}:
+    $4^2 + 3^2 + 5^2$\\
+    $5^2 + 5^2 + 13^2$\\
+    $24^2 + 7^2 + 25^2$\\
+    $40^2 + 9^2 + 41^2$\\\\
+    \underline{General formula}:
+      $x = m^2 - n^2$, $y = 2mn$, and $z = m^2 + n^2$ where $gcd(m,n) = 1$

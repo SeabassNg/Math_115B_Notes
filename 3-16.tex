@@ -1,0 +1,48 @@
+\section*{3/16}
+  $\mathbb{Z}[i]$ has division with "good" remainders.\\
+  $a = qb + r$ with $N(r) < N(b)$.\\
+  $q, r$ are not unique, but that's ok.\\\\
+  \subsection*{A systematic way of finding Gaussian factors}
+    Let $a = 7$ and $b = 2+i$.\\
+    $\frac{7}{2 + i} = \frac{7(2-i)}{5} = \frac{14 - 7i}{5}$.\\
+    Round up for $\frac{14}{5}$ since it's closer and round up
+    for $\frac{-7i}{5}$ since it's closer to that area, so we have
+    $3 - i$.\\
+    So, $7 = (3-i)(2+i) - (i)$.\\\\
+    Division implies Euclidean algorithm.\\
+    "$\mathbb{Z}[i]$ is a Euclidean domain"\\
+    This implies strong gcd. Given $a,b$, $\exists c,d$ such that
+    $ac + bd = gcd(a,b) | a,b$\\
+    If $p$ is prime, $p | ab \Rightarrow p|a$ or $p|b$.\\
+    \begin{proof}
+      Suppose $p\not| a$ and $p \not| b$.\\
+      And so, $c_1p + d_1a = 1$ and $c_2p + d_2b = 1$.\\
+      Multiply by each other and you get something like...\\
+      stuff $\cdot p + d_1d_2ab = 1$.
+    \end{proof}
+    This then implies unique factorization.\\
+    What are Gaussian primes?\\
+    \begin{enumerate}
+      \item When $z$ is Gaussian primes, $z \approx \overline{ez}$\\
+      \item If $z$ is a Guassian prime (or any Gaussian integer), then
+        $z | N(z) = z \overline{z}$\\
+        Number of $\mathbb{Z}$ less than the number of $\mathbb{Z}[i]$
+        factors.\\
+        So, $N(z) = p$, a vanilla prime and $p = (a + ib)(a - ib) = a^2 + b^2$
+        or $N(z) = p^2 = p$.\\
+        So, finding Gaussian primes, amounts to $p = a^2 + b^2$.\\
+        If $p \equiv 3 \mod $, then $p \not= a^2 + b^2$, so $p$ is a Gaussian
+        prime if $p \equiv 3 \mod 4$.
+    \end{enumerate}
+    \begin{theorem}
+      If $p \equiv 1 \mod 4$, then $p = a^2 + b^2$.
+    \end{theorem}
+    \begin{proof}
+      Recall that if $-1 \equiv n^2 \mod p$ if $p \equiv 1 \mod 4$.\\
+      $p | n^2 + 1 = (n+i)(n-i)$\\
+      Does $p | n + i$. No! $p \not| 1$.
+    \end{proof}
+    \begin{theorem}
+      $n = a^2 + b^2$ iff $\forall p \equiv 3 \mod 4$, number of factors of 
+      $p \cdot n$ is even.
+    \end{theorem}

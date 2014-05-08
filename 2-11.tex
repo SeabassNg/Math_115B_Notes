@@ -1,0 +1,48 @@
+\section*{2/11}
+  \subsection*{Repeating decimals and fractions}
+    fractions $\implies$ repeating decimal\\
+    Now, repeating decimal $\implies$ fraction\\
+    \begin{enumerate}
+      \item A terminating decimal is a fraction $\frac{a}{10^n}$ where $n$ is
+        the number of digits. OR in base $d$, $\frac{a}{d^n}$\\
+        Note: decimal points can be used to express $\alpha \in \mathbb{R}$ in 
+        any base.
+      \item Pure reptition, $0 < \alpha < 1$ and repeats from beginning.\\
+        $\alpha = .\text{digits of some $k$}$, e.g., $\alpha = 
+        .237\overline{237}$, so $\frac{\alpha}{k} = .\overline{000\ldots 1} = 
+        \frac{1}{10^n - 1}$
+    \end{enumerate}
+    Finally, every $\alpha = $ terminating repeats from beginning.\\\\
+    Another argument that fraction implies repeating decimal is based on
+    converse direction:\\
+    If $\frac{a}{b} = \frac{c}{99\ldots9} = \frac{c}{10^n - 1}$, then yes.\\
+    Claim is, this is possible if $b \perp 10$.\\
+    Another claim: $\exists n$ such that $b | 10^n - 1$, $10^n \equiv 1 \mod 
+    b$\\
+    Yes, $n = ab$, for instance, Euler's theorem.\\
+    In base $d$  $b \perp d$, then $d^{\phi(b)} \equiv 1 \mod b$,
+      $(\frac{a}{b}) = (\frac{c}{d^n - 1})$.\\
+    What if $gcd(b, 10) > 1$ or $gcd(b,d) > 1$? Can we fix that by multiplying
+    and dividing by the base.\\
+    \underline{Example}: $\frac{1}{14} = \frac{1}{10} (\frac{10}{14}) = 
+      \frac{1}{10}(\frac{5}{7})$\\
+    A general, $\frac{a}{b} = \frac{1}{10^k}(\frac{b^ka}{b})$ if $k$ is
+    big enough $\frac{10^ka}{b} = \frac{c}{d}$\\
+    All of this still works in $p$-adic number $\mathbb{Q}_p$ or even
+    in $n$-adic number $\mathbb{Q}_n$.\\
+    $\mathbb{Q}_p$ is $\mathbb{Z}_p$ except with dividing by $p$ allowed and
+    realized by finitely many digits to the right of the decimal.\\\\
+    \underline{Example}: $\ldots 444_3 = -1$\\
+    $\ldots 111_5 = -\frac{1}{4}$\\
+    $\ldots 334_5 = \frac{1}{4}$\\
+    $\frac{1}{4}\frac{1}{25} = \frac{1}{100} = \ldots 333.34_5$\\
+    $\frac{1}{5} = .1_5$\\
+    \begin{theorem}
+      In $\mathbb{Q}_p$ or even $\mathbb{Q}_n$. fraction $\Leftrightarrow$
+      repeating digits.
+    \end{theorem}
+    $\mathbb{Q}_p$ is a field $\mathbb{Q}_{p^k} = \mathbb{Q}_p$\\
+    $\mathbb{n}$ where $p,q | n$ has "zero division". $ab = 0$, $a, b \not= 
+    0$.
+    In $\mathbb{R}$, in base $p$, $\frac{1}{7} = .\overline{142857}$ and 
+    $-\frac{1}{7} = \ldots 142857$.

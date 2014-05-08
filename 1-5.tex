@@ -1,0 +1,42 @@
+\section*{1/5}
+  \subsection*{Continuation of Math 115A}
+    Some goals: 
+    \begin{enumerate}
+      \item Theorem that every prime, $p$, has a primitive root.
+      \item quadratic residues. Theorem (Guass) whether $p$ is a quadratic $\mod
+        q$ determined by whether $q$ is a quadratic $\mod p$. ($x$ is a quadratic
+        $\mod p$ means $x \equiv y^2 \mod p$ for some $y$). Quadratic 
+        reciprocity.
+      \item Polynomial equations in integers and $\mod p$.
+    \end{enumerate}
+
+  Some review: What primitive roots do for you.\\
+  Knowing that $\mod p$ arithmetic ($\mathbb{Z}/p$) has a primitive root, $r$
+  (an element of order $p-1$) makes $(\mathbb/p)^x \cong \mathbb{Z}/(p-1)$, a
+  renaming or bijection that preserves important things.\\
+  \begin{eqnarray*}
+    (\mathbb{Z}/p)^x & \leftrightarrow & \mathbb{Z}/(p-1) \\
+    r^x & \gets & x\\
+    a &\mapsto & ind_r{a}\\
+    \text{multiplication }ab & \leftrightarrow & \text{addition }x+y\\
+    \text{exponentiation }a^y & \leftrightarrow & \text{multiplication }xy\\
+    \text{addition} & \leftrightarrow & \text{eh.... nothing simple} \\
+    \text{order of $a$, $ord_p a$} & \leftrightarrow_{a \equiv r^x}& \text{additive
+    order, 1st $y$ such that $xy \equiv 0 \mod p-1$ or $y = 
+    \frac{p-1}{gcd(x,p-1)}$}\\
+    \text{primitive root $b$} &\leftrightarrow_{b \equiv r^y}& \text{prime 
+    residue}y
+  \end{eqnarray*}
+  Therefore, $\exists \phi(p-1) = \phi(\phi(p))$ primitive roots.\\
+  Recall $\phi(n) = $ number of prime residues $\mod n$.\\
+  \underline{An example}: $2$ is a primitive root $\mod 11$.\\
+  $1, 2, 4, 8, 5, -1, -2, -4, -8, -5$\\
+  This corresponds to $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$.\\
+  What does this mean?\\
+  $-1 \leftrightarrow \frac{p-1}{2}$ if $p$ is odd.\\
+  In this case, $r^{\frac{p-1}{2}} \equiv -1$ for any primitive root.\\
+  The equation $x^2 \equiv -1$, i.e. $x^4 \equiv 1$ and $x \not\equiv 1$ or $-1$,
+  i.e. $x$ has order 4.\\
+  ($x$ is like $i$, $i^2  \equiv -1$. It is fair to say $x \equiv i$.)\\
+  $\pm i \leftrightarrow \frac{p-1}{4}$ and $\frac{3(p-1)}{4}$ exists iff $\equiv 1 \mod 4$. primitive root theorem thus implies that if $p \equiv 3 \mod 4$, $p \not| n^2 + 1$. If $p \equiv 1 \mod 4$, $\exists n$ such that $p \equiv 1 \exists
+  p | n^2 + 1$

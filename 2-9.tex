@@ -1,0 +1,77 @@
+\section*{2/9}
+  Jacobi symbol and primality tests for $n$.\\
+  Let's say $n$ odd.\\
+  If $n$ is prime,$p$, there are two ways to compile $(\frac{a}{n}) = (
+  \frac{a}{p})$,
+  \begin{enumerate}
+    \item Euler's lemma, $(\frac{a}{p}) \equiv a^{\frac{p-1}{2}} \mod p$
+    \item Extension of Euclidean algorithm, using quadratic residues of $p$
+  \end{enumerate}
+   But if $n$ is composite, only have part 2 to compute $(\frac{a}{n})$.\\
+   Thus, a primality test (Solovay-Skossen).\\
+   If $n$ is prime, then $(\frac{a}{n}) \equiv a^{\frac{n-1}{2}} \mod n$\\
+   These could happen even if $n$ is not prime for some $a$.\\
+   If it happens (and $n$ is composite) $n$ is an "Euler pseudoprime".\\
+   \underline{Fact}: If $a^{\frac{n-1}{2}} \equiv (\frac{a}{n}) \mod n$, then
+   $a^{n-1} \equiv (\frac{a}{n})^2 \equiv 1 \mod n$.\\
+   Euler psuedoprime $\Rightarrow$ vanilla a-psuedoprime.\\
+   Miller's Test is stronger than Euler's test.\\
+   \begin{theorem}
+    If $a$ is a Miller $a$-pseudoprime, then $a$ is a Euler $a$-pseudoprime.
+   \end{theorem}
+   Let $2^j | n - 1$ such that $\frac{n-1}{2}$ is odd.\\
+   Then, if $n$ is prime, $a^{\frac{n-1}{2^j}}, a^{\frac{n-1}{2^{j-1}}} \ldots
+   a^{n-1}$ is either all 1s or $\ldots, -1, 1$.\\\\
+   The strategy for either test is chosen at random to make $n$ either composite
+   for sure or probably prime.\\
+   \begin{theorem}(Miller-Rabin)
+    At least $\frac{3}{4}$ of reults reveal $n$ to be completely by Miller's 
+    test. 
+   \end{theorem}
+   \begin{theorem}(Solovay-Strassen)
+    At least $\frac{1}{2}$ of reults reveal $n$ to be completely by Euler's 
+    test. 
+   \end{theorem}
+   \begin{theorem}(Baby Solovay Strassen)
+    If $n$ is composite, $\exists a \perp n$ such that $a^{{n-1}} 
+    \not\equiv (\frac{a}{n}) \mod n$
+   \end{theorem}
+   \begin{proof}
+    say it wasn't so for some $n$.\\
+    $a^{n-1} \equiv 1 \mod n$ $\forall a \perp n$, so $n$ is Carmichael.\\
+    $n$ is square-free and $p-1 | n-1$ when $p | n$\\
+    Say $p | n$, we supposed $a^{\frac{n-1}{2}} \equiv \pm 1 \mod p$.\\
+    Let $k = \frac{n-1}{p-1}$.\\
+    $a^{\frac{p-1}{2}} \equiv \pm 1 \mod p$\\
+    $(a^{\frac{p-1}{2}})^k \equiv a^{\frac{n-1}{2}}$ and $k$ is odd because
+    $a^{{p-1}{2}}$.\\
+    So, where we are, $a^{\frac{n-1}{2}} \equiv a^{p-1}{2} \mod p$ when $p |n$\\
+    By hypothesis, $a^{\frac{n-1}{2}} = (\frac{a}{n})$ and $(\frac{a}{p})$
+    by fact.\\
+    Therefore, $(\frac{a}{n}) = (\frac{a}{p}) \Rightarrow$ If $p,q | n$,then
+    $(\frac{a}{p}) = (\frac{a}{q})$. This can't happen because $a$ is $\mod p$
+    of a $\mod q$.
+   \end{proof}
+   \underline{Example}: Let $n = 561 = 3 \times 11 \times 17$. If this passed
+    Euler's test, then $\forall a \perp n$, then 1) $n-1 = (p-1)k$ $\forall
+    p | n$ and 2) $(\frac{a}{p}) = (\frac{a}{q})$.
+
+  \subsection*{Rational and irrational numbers}
+    We'll be doing this in $\mathbb{Q} \subseteq \mathbb{R}$ and in 
+    $\mathbb{Q}_p$.\\
+    \begin{theorem}
+      $\alpha \in \mathbb{R}$ is rational iff it's a repeating decimal.
+    \end{theorem}
+    \begin{proof}
+      Depends on how long division works. The algorithm determines by the
+      remainder. If the remainder ever repeats, when you're pulling down 0s, 
+      then the whole algorithm repeats after that.\\
+      Repeats must happen because there is only finite choices of remainders.
+      \\\\
+      The converse.\\
+      If digits of $\alpha$ repeats, then $\alpha = \frac{a}{b}$.\\
+      2 cases:\\
+      1) Terminating decimals: Yes! Ex) 7.215 = 7215 / 1000
+      2) Repeating from start. $.99999999\ldots = 1$, $.001001 \ldots = 
+      \frac{1}{999}$, and $.237237\ldots = \frac{237}{999}$
+    \end{proof}

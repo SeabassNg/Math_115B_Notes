@@ -1,0 +1,73 @@
+\section*{1/9}
+  \fbox{
+    \begin{minipage}{7in}
+      \underline{Theorem (Langrange)}: If $p$ is prime, $\alpha(x)$ is a 
+      integer polynomial of degree $n$, then $\alpha(x) \equiv \mod p$ has $\le n$
+      incongruent solutions. ($\alpha(x) \not= 0$)
+    \end{minipage}
+  }\\
+  Compare with, In $\mathbb{Q}$ or $\mathbb{R}$, $\alpha(a) = 0$ has $\le n$
+  solutions. In $\mathbb{C}$, $\alpha(x) = 0$ has exactly $n$ solutions counting
+  repeats.\\
+  \subsection*{Polynomials $\mod p$ in general}
+    If we say that $\alpha(x) \equiv \beta(x) \mod n$, it could mean that
+    the coefficients are equivalent or the values are congruent.\\
+    They're not congruent situations. The former is the usual meaning and is
+    stronger. The former implies the latter.\\
+    \underline{Example}: $n=2$. Let's claim that $x^2 + x \equiv 0 \mod 2$\\
+    There are only 2 cases, $0,1$.\\
+    $0^2 + 0 \equiv 0$ and $1^2 + 1 \equiv 0$, so it's true.\\
+    They're not equivalent as polynomials.
+  \subsection*{Proof of Lagrange's theorem}
+    Uses induction on degree of $a$ and Primality Lemma\\
+    Primality Lemma - If $p | ab$, then $p | a$ or $p | b$.\\
+    \underline{Base case}: Let deg($a$) = 0 where $a \not\equiv 0$.\\
+    We want to know that $a$ has at most 0 roots $\mod p$.\\
+    This is true because $a(x) = b \mod c$ where $b \not\equiv 0$ has no
+    solution since no matter what $x$ is, $a(x) \not\equiv 0$ since it is
+    $\equiv b$. \\
+    \underline{Inductive case}: We have $a(x)$, say $x = r$ is $a \mod p$ roots.
+    Otherwise, if there is no $r$, we're done.\\
+    Then, $a(r) = b$, say I mean = in $\mathbb{Z}$, $b \equiv 0 \mod p$ or 
+    $p | b$. We can change $a(x)$ to $\hat{a}(x) = a(x) - b$, doesn't change the 
+    situation. $r$ is an ordinary root of $\hat{a}(x)$.\\
+    $\hat{a}(x) = (x-r)c(x)$\\
+    $a(x) \equiv (x-r)c(x) \mod p$.\\
+    I claim that if $(s-r)c(s) \equiv 0 \mod p$ where $s \not= r$, then 
+    $c(s) \equiv 0 \mod p$.\\
+    Yes, this is true because $p \not| s - r$, so $p | c(s)$ or $\frac{1}{s-r}$
+    exists $\mod p$.\\
+    $a(x) \equiv (x-r)c(x)$, so deg($a$) = $n$, deg($c$) = n -1, $c(x)$ has
+    $\le n-1$ roots.\\
+    Claim says $a(x)$ has the roots that $c(x)$ does. $p$ is at most
+    one more, so $a(x)$ has $\le n$ roots.\\\\
+   \fbox{
+    \begin{minipage}{7in}
+      \underline{Theorem}: A polynomial with coefficients in any field factors
+      uniquely into irreducible polynomials.
+    \end{minipage}
+  }\\\\
+  Proof is similar to the unique factorication of integers last quarter. It's
+  a bit more abstract, but the idea is still the same.\\\\
+  Recall, we will care about $x^k \equiv 1 \mod p$.\\
+  In general, $a(x) \equiv 0 \mod p$ is hard to solve when $p$ is big.\\
+  The $\le$ deg($a$) solutions is only easy part.\\
+  What about $a(x) \equiv 0 \mod n$ where $n$ is not prime?\\
+  \underline{Example}: $x^3 + x + 5 = 0 \mod 21$\\
+  From the chinese remainder theorem, $a(x) \equiv 0 \mod n \Leftrightarrow
+  a(x) \equiv 0 \mod \text{prime power factors of $n$}$\\
+  That still leaves $a(x) \equiv 0 \mod p^k$.\\
+  \underline{Note}: mod 49 $\not\Leftrightarrow$ mod 7, BUT mod 49 $\implies$
+  mod 7.\\
+  So, from our example, $x^3 + x + 5 \equiv 0 \mod 49 \implies x^3 + x + 5
+  \equiv 0 \mod 7$.\\
+  So, our plan: solve $\mod p^{k-1}$. First say $x \equiv r \mod p^k$. Then,
+  lift $x \equiv r + tp^{k-1} \mod p^k$. $t$ exists $\mod p$. This is called
+  "Hensel lifting".\\\\
+   \fbox{
+    \begin{minipage}{7in}
+      \underline{Theorem(Hensel)}: the equation for $t$ is linear and uses 
+      $\frac{d}{dx} a(x)$.
+    \end{minipage}
+  }\\\\
+

@@ -1,0 +1,78 @@
+\section*{1/21}
+  $x \in \mathbb{Z}_p$ is like an integer except when it has infinitely
+  digits to the left in base $p$.\\
+  \underline{Example}: $\ldots 444_5 + \ldots 001_5 = \ldots 000_5$\\
+  As we can see, $\ldots 444_5 = -1$, $\ldots 001_5 = 1$, and $\ldots 000_5 = 
+  0$\\\\
+  \underline{Example}: $\ldots 12_5$ * $\ldots 12_5$ = $\ldots 44_5$\\
+  there exists a way to fill remaining digits, so that $x^2 = -1 \in 
+  \mathbb{Z}_5$\\
+  A  $p$-adic integer, $x \in \mathbb{Z}_p$ is the same as any consistent
+  set of residues $\mod p$, $\mod p^2$, $\ldots$\\
+  $x = \ldots 12_5$\\
+  \begin{eqnarray*}
+    x &\equiv& 2 \mod 5 \\
+    x &\equiv& 7 \mod 25 \\
+    &\vdots&
+  \end{eqnarray*}
+  Hensel lifting $p$-adically base $p$.\\
+  Lift $x^2 \equiv -1 \mod 5$\\
+  \begin{eqnarray*}
+    x &\equiv& 2 \mod 5\\
+    x &\equiv& 7 \mod 25\\
+  \end{eqnarray*}
+  To get to $\mod 125$, as in the book, $x \equiv 7 + t25 \mod 125$\\\\
+  Recall, $\bar{n}$ has used for $\mod k$ value of $n$\\
+  $\ldots t12_5 \times \ldots t12_5 = \ldots \bar{2t}24_5 + \ldots t12_5 + 
+  \ldots t \text{ or } t+1 \bar{2t}$. Confusing? Yea... We end up
+  ignoring the t's at the end anyway, since we only have three digits.\\
+  So, we have $\bar{4t+1}44_5$\\\\
+  If we wanted, $x^2 \equiv -1 \in \mathbb{Z}_5$, got $4t+1 \equiv 4 \mod 5$\\
+  $t \equiv 2$.\\
+  Remember, $\ldots 44_5 \equiv -1$, which is why we wanted the digit, $4t+1$
+  to be 4.\\\\
+  Other fun facts,
+  \begin{enumerate}
+    \item $\mathbb{Z}_n$, $n$ not prime\\
+     $\mathbb{Z}_{p^k} \cong \mathbb{Z}_p$\\
+     i.e. 2-adicts, and 8-addics are equivalent
+     \item Every $\mathbb{Z}_n$ is a commutative ring
+     \item $\mathbb{Q}_p$ is a field
+     \item If $n$ is not $p^k$, say $n = p_1^{k_1}p_2^{k_2}\ldots p_a^{k_a}$,
+     then by the Chinese Remainder Theorem, $\mathbb{Z}_n
+     \cong \mathbb{Z}_{p_1} \times \ldots \times \mathbb{Z}_{p_a}$
+  \end{enumerate}
+
+  \underline{Example}: $\mathbb{Z}_{10} \cong \mathbb{Z}_5 \times \mathbb{Z}_2$
+  by the Chinese Remainder Theorem\\
+  \begin{eqnarray*}
+  \text{a 10-adic integer} &\leftrightarrow& 
+  \text{a pair consisting of a 5-addic integer
+  and 2-addict integer}\\
+  x \mod 1000 &\leftrightarrow& (x \mod 125, x \mod 8)
+  \end{eqnarray*}
+
+\subsection*{Mobius inversion}
+  Leading to existence of primitive roots\\
+  Recall that $\mu(n) = \begin{cases} (-1)^{\text{number of prime divisors of 
+  $n$}} & \text{ if $n$ is square-free}\\ 0 & \text{otherwise} \end{cases}$\\
+  Let $f(n)$ be some function.\\
+  Let $F(n) = \sum_{d|n} f(d)$ where $f(d)$ is a summatory function.\\
+  If we know $F(n)$, what's $f(n)$ for all $n$?\\
+  i.e. $f(9) = F(9) - F(3)$\\
+  i.e. $f(12) = F(12) - F(6) - F(4) + F(2)$. This is inclusion-exclusion with
+  two subsets divisible by 6 and 4.\\\\
+  General inclusion-exclusion formula for sets:\\
+  Number of elements in $U$ not in $A_i$'s where $A_i$ is each subset of $U$ =
+  $\sum |A_i| - \sum |A_i \bigcap A_j| + \sum |A_i \bigcap A_j \bigcap A_k| -
+  \ldots$.\\
+  Mobius inversion is an adaptation of that.\\
+  \begin{eqnarray*}
+  f(n) &=& F(n) - \sum_{p | n} F(\frac{n}{p}) + \sum_{p,q | n\text{, but }p 
+  \not= q} F(\frac{n}{pq}) - \sum F(\frac{n}{pqr}) + \ldots\\
+  & = & \sum_{d|n \text{ and is square free}} (-1)^{\text{number of prime factors of $d$}} F(\frac{n}{d})\\
+  \end{eqnarray*}
+  Back to the example,
+  \begin{eqnarray*}
+    f(12) &=& F(12) - F(6) + 0F(3) - F(4) + F(2) + 0F(1)
+  \end{eqnarray*}

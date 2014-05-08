@@ -1,0 +1,76 @@
+\section*{3/6}
+  \subsection*{Pythagorean triples}
+    $x^2 + y^2 = z^2$ was studied by various ancient civilizations.\\  
+    \underline{Formulae for Pythagorean triples}:
+      \begin{eqnarray*}
+        x = m^2 - n^2\\
+        y = 2mn
+        z = m^2 + n^2
+      \end{eqnarray*}
+    Now, Fermat proposed $x^n + y^n = z^n$.\\
+    For each fixed $n$, it's Diophantine.\\
+    Very different behavior for different $n$ with something in common.
+    \begin{theorem}
+      Fermat's Last "Theorem"\\
+      There are no non-trivial integer solutions to $x^n + y^n = z^n$.
+    \end{theorem}
+    Have fun with the proof...
+    \begin{theorem}
+      Fermat did solve this though\\
+      $x^4 + y^4 = z^4$ has no non-trivial solutions.
+    \end{theorem}
+      If $n = 1$, $x + y = z$, then that's easy.\\
+      If $n = 2$, $x^2 + y^2 = z^2$, that's doable. Just Pythagorean triples\\
+      Let $n = ab$. Then, $(x^a)^b + (y^a)^b = (z^a)^b$. This is a special case
+      of $x^b + y^b = z^b$.\\
+      This reduces the cases to primes of power 4 and $n$ is prime.\\\\
+      No solutions to $a^2 + b^2 + c^2 = 7$\\
+      There's also no solutions to $\mod 8 \Rightarrow$ no solutions.\\
+      Let's look at $x^2 + y^2 = z^2$ and $gcd(x,y) = 1$.\\
+      Quadratic solutions of $\mod 4$ is $0, 1$.\\
+      With $0 + 0 = 0$ and $1 + 1 = 2$, they aren't interesting.\\
+      $1 + 0 = 1 = 0 + 1$\\
+      Without loss of generality, $x$ is odd and $y$ is even.\\\\
+      Using the formulae of pythagoren triples:\\
+      \begin{eqnarray*}
+        x^2 & = & (m^2 - n^2)^2\\
+        & = & m^4 - 2m^2n^2 + n^4\\
+        y^2 & = & 4m^2n^2\\
+        z^2 & = & (m^2+n^2)^2\\
+        & = & m^4 + 2m^2n^2 + n^4\\
+        & = & x^2 + y^2
+      \end{eqnarray*}
+      If $gcd(m,n) = d$, then $d^2 | (x,y)$. We want $gcd(m,n) = 1$, then
+      $gcd(x,y) = 1$.\\\\
+      Say $gcd(m,n) = 1$.\\
+      Say $p |y = 2mn$\\
+      If $p = 2$, then $p \not| x = m^2 n^2$ and $x \equiv 1 \mod 2$.\\
+      If $p | m$, then $p \not| n$, so $x \equiv n^2 \not\equiv 0 \mod p$.\\
+    \begin{theorem}
+      If $x^2 + y^2 = z^2$ with $gcd(x,y) = 1$ and $2 | y$, then
+        $x = m^2 - n^2$, $y = 2mn$, $z = m^2 + n^2$.
+    \end{theorem}
+    \begin{proof}
+      Let $y^2 = z^2 - x^2 = (z + x)(z - x)$.\\
+      Claim: $gcd(z - x,x+z) = 2$.\\
+      First of all, we know that $2\not| x,z$, so it is at least 2.\\
+      \begin{eqnarray*}
+        gcd(x + z, z - x) & = & gcd(x + z, 2z)
+      \end{eqnarray*}
+      If $p$ is odd | $2z$, then $p | z$. Then, $p \not| x$.\\
+      Then, $p \not| x + z$.\\
+      \begin{eqnarray*}
+        y^2 & = & (x + z)(z - x)\\
+        & = & 4\frac{x+2}{2})\frac{z-x}{2}\\
+        (\frac{y}{2})^2 = (\frac{x + z}{2})(\frac{z - x}{2})
+      \end{eqnarray*}
+      By unique factorization, $\frac{x + z}{2} = m^2$ and $\frac{z-x}{2} = 
+      n^2$.\\
+      So, we have the following three equations:\\
+      $(\frac{y}{2})^2 = m^2n^2$\\
+      $\frac{z + x}{2} = m^2$\\
+      $\frac{z - x}{2} = n^2$\\\\
+      First equation gets you $y$
+      If we add the latter two equations, you get $z$
+      If we subtract the latter two equations, you get $x$
+    \end{proof}

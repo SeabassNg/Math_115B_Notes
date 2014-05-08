@@ -1,0 +1,83 @@
+\section*{1/23}
+  \subsection*{More Mobius inversions}
+  $f(n)$ is some function and $F(n)$ is the $f(n)$'s summatory function.\\
+  $F(n) = \sum_{d|n}f(d)$\\
+  You can also find $f(n)$ from $F(d)$ too. $f(n) = \sum_{d|n} \mu(d)F(\frac{n}
+  {d}) = \sum_{d|n} \mu(\frac{n}{d}) F(d)$\\
+  Most important point: You have a bijection between $f$ and $F$.\\\\
+  \underline{Example}: Last quarter, we learn the following:\\
+    \begin{itemize}
+      \item $\tau(n)$ is the number of divisors of $n$
+      \item $\sigma(n)$ is the sum of divisors of $n$
+      \item $\phi(n)$ is the number of prime residues $\mod n$
+    \end{itemize}
+    $\tau(n)$ is the summatory function of $f(n) = 1$ $(\tau(n) = \sum_{d|n}1)$
+    , so $1 = \sum_{d | n} \mu(\frac{n}{d}) \tau(d)$\\\\
+    $\sigma(n) = \sum_{d |n} d$, so $\sigma(n)$ is the summatory function of 
+    $f(n) = n$ making $n = \sum_{d|n} \mu(\frac{n}{d})\sigma(d)$.\\\\
+    What about $\phi(n)$?
+    \begin{theorem}
+      The summatory function of $\phi(n)$ is $F(n) = n$, so
+      $\phi(n) = \sum{d|n}\mu(\frac{n}{d)})$
+    \end{theorem}
+    \underline{example and idea}: Let $n = 10$. The plan is to assemble
+    $\mathbb{Z}/10$. From $\mathbb{Z}/d)^x$ for $d | a$.\\
+    \begin{proof}
+      If $a \in \mathbb{Z}/n, gcd(a,n) = d$ for $d | n$ \\
+      Segregate $a$'s by this value. For each of them, there are 
+      $f(\frac{n}{d})$ choices for $a$ because $a = db$, $b \in
+      (\mathbb{Z}/\frac{n}{d})^x$, so $n = \sum_{d|n} \phi(\frac{n}{d})
+      = \sum_{d|n}\phi(d)$
+    \end{proof}
+    \begin{theorem}{Primitive root theorem}
+      If $p$ is prime, then $\mathbb{Z} / p$ has a primitive root, $r$, an
+      element of order $p-1$.\\
+      Then, the elements of $\mathbb{Z}/p$ are powers of $r$.\\
+      Then, there are $\phi(p-1)$ primtive roots, $r^x$ where $x \in
+      (\mathbb{Z}/(p-1))^x$.
+    \end{theorem}
+    Actually, we'll go straight to this.\\
+    What we need for this proof:
+    \begin{enumerate}
+      \item Lagrange's theorem: We have $\le$ degree of $a(x)$ solutions to 
+        $a(x) \equiv 0 \mod p$\\
+      \item Number of solutions to $x^{p-1} \equiv 1 \mod p$ is $p-1$
+      \item The defintion of $f_p(n)$ and $F_p(n)$
+      \item The lemma that will be introduced later
+    \end{enumerate}
+    \begin{definition}
+      \begin{itemize}
+        \item $f_p(n)$ is the number of residues of order $n \mod p$
+        \item $F_p(n)$ is the number of solutions to $x^n \equiv 1 \mod p$
+          where $ord_p x | n$
+      \end{itemize}
+    \end{definition}
+      If you let $d = ord_px$, definitions give us $F_p(n) = \sum_{d|n}
+        f_p(d)$\\
+      Our goal is to show $(\mathbb{Z}/p)^x$ are a big circle, i.e.
+      \begin{eqnarray*}
+        F_p(n)  =  n \text{when }n | p-1 & \Leftrightarrow &
+        f_p(n) = \phi(n) \text{ when } n | p-1\\
+        & \Leftarrow & \text{Today's lemma}\\
+        & \Rightarrow & \text{Mobius inversion}
+      \end{eqnarray*}
+    \begin{lemma}
+      If $n | p-1$, then $x^n \equiv 1 \mod p$ has exactly $n$ solutions.
+    \end{lemma}
+    \begin{proof}
+      $x^{p-1} - 1 = (x^n -1) \times a(x)$\\
+      On the left side, we have $p-1$ solutions.\\
+      $x^n - 1$ has at least $n$ solutions.\\
+      degree of $a(x)$ is $p-1-n$\\
+      We know that $x^{ab} - 1 = (x^a - 1)(x^{ab-a} + x^{ab-2a} + x^{ab - 3a}
+       + \ldots + x^a + 1)$\\
+    \end{proof}
+    Recall, $a$ is a quadratic residue $\mod p$ means that it's a square
+    $\mod p$.\\
+    \begin{definition}
+      $\left(\frac{a}{p}\right) = \text{Legendre symbol} = \begin{cases}
+      1 & \text{ if $a$ is a quad residue and $a \not\equiv 0 \mod p$}\\
+      -1 & \text{ if $a \not\equiv 0 \mod p$ and not quad residue}\\
+      0 & a \equiv 0 \mod p
+      \end{cases}$
+    \end{definition}

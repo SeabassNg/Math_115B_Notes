@@ -1,0 +1,68 @@
+\section*{1/26}
+  \subsection*{Quadratic residues}
+    If $p$ is prime (and a large one), most $a(x) \equiv 0 \mod p$ are
+    hard to solve or even to count solutions for computer with known 
+    algorithms.\\
+    $x^n \equiv 1 \mod p$ is a special and easy to count solutions.\\
+    The number is the $gcd(n, p-1)$. It is easy to find them too if you 
+    obtain a primitive root, $r$.\\
+    $x^n \equiv c \mod p$ is hard again even for most small $n$, i.e. $n=3$.\\
+    Even counting solutions , even (I think) if you have a primitive root
+    and can factor $p-1$.\\\\
+    How you use primitive roots.
+    \begin{eqnarray*}
+      (\mathbb{Z}/p)^x &\cong& \mathbb{Z}/(p-1)\\
+      r^x &\leftarrow& x\\
+      a &\mapsto& ind_{r,p}a\\
+    \end{eqnarray*}
+    Why not take discrete logs?\\
+    $ind_{r,p}x^n \equiv n \times ind_{r,p}x \equiv ind_{r,p}c \mod p-1$\\
+    But this is hard to find! "Discrete logarithm problem"\\\\
+    BUT, $n=2^m$ where $m \in \mathbb{N}$ is the big exception.\\
+    You can count solution to $x^2 \equiv c \mod p$ and even find them
+    (Shanks - Tonelli).\\
+    Traditional and convenient form for two types of $c$ ($x^2 \equiv c$ has
+    or doesn't have solutions) is Legendre symbol.\\
+    $(\frac{c}{p}) = \begin{cases} 1 & \text{ if $c \perp p$ and two solutions}
+    \\ -1 & \text{ if $c \not\perp p$ and 0 solutions}\end{cases}$\\
+    In the former case, $c$ is quadratic residue. In the latter case,
+    $c$ is non-quadratic residue. If $p|c$, we have two conventions.\\
+    $(\frac{c}{p})$ is undefined or it's 0.\\\\
+    First properties
+    \begin{enumerate}
+      \item $(\frac{a}{b})$ depends only on $a \mod p$. The real point:
+        $f(a) = (\frac{a}{b})$ is either a function on $\mathbb{Z}/p$ or an
+        $\mathbb{Z}$. Both interpretations are important.
+      \item $(\frac{ab}{p}) = (\frac{a}{p})(\frac{b}{p})$. So, it's completely
+        multiplicative in $a$.
+    \end{enumerate}
+    For the second property,
+      Not so hard if $(\frac{a}{p})(\frac{b}{p})$ are $1,1$ or $1, -1$ or
+      -1, 1. But, -1, -1?\\
+      If $a \equiv x^2$ and $b \equiv y^2$, then $ab \equiv (xy)^2$.\\
+      Interesting case, $a \not\equiv x^2$ and $b \not\equiv y^2$ (for any
+      $x$ or $y$ $\Rightarrow ab \equiv z^2$.
+    \begin{proof} For the second property\\
+      Say we have primitive roots and $p$ is odd.\\
+      Then, $a \equiv x^2 \mod p$. Take logs and you get
+      $j \equiv 2k \mod p-1$ where $a \equiv r^j$ and $x \equiv r^k$\\
+      If $a \equiv r^j$, then $(\frac{a}{p}) \equiv \begin{cases} 1 &
+      \text{ when $z|j$}\\ -1 & \text{ when $z\not|j$} \end{cases}$\\
+      So, $(\frac{ab}{p}) \equiv (\frac{a}{p})(\frac{b}{p})$.\\
+      Then, just becomes addition of exponents $\mod 2$\\
+      So, $(\frac{a}{p}) = 1$ $\frac{p-1}{2}$ times.\\
+      This is also true because $x \mapsto x^2$ is 2-to-1
+    \end{proof}
+    Back to the first property, $(\frac{a}{p})$ depends on $a \mod p$.\\
+    For example, $(\frac{10000}{31})$. You can divide and take the remainder.\\
+    Can you relate $(\frac{a}{p})$ to $\frac{p}{a}$?\\
+    Then, it would be step 1 towards an Euclidean type algorithm to compute
+    $(\frac{a}{p})$\\
+    \begin{theorem}
+      From Gauss.\\
+      If $p$ and $q$ are odd primes, then $(\frac{p}{q})(\frac{q}{p}) =
+      (-1)^{\frac{p-1}{2}\frac{q-1}{2}}$\\
+      I.e. $(\frac{p}{q}) = (\frac{q}{p})$ if at least 1 of $p$ and $q$ is $1
+        \mod 4$\\
+        $(\frac{p}{q}) \not= (\frac{q}{p})$ if $p \equiv q \equiv 3 \mod 4$
+    \end{theorem}

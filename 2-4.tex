@@ -1,0 +1,84 @@
+\section*{2/4}
+  \subsection*{The Jacobi symbol}
+    If $n = p_1^{e_1}p_2^{e_2} \ldots p_k^{e_k}$,
+    then $(\frac{a}{n}) = (\frac{a}{p_1})^{e_1}(\frac{a}{p_2})^{e_2} \ldots
+      (\frac{a}{p_k})^{e_k}$\\
+    Right hand side is the Legendre symbol and left side is the Jacobi symbol.\\
+    Legendre is only defined for odd primes.\\
+    If $gcd(a,n) > 1$, let it be 0.
+    There is no particular interpretation at first.\\
+    This is set up so that quadratic reciprocity is still true and the laws for
+    $(\frac{-1}{n})$ and $(\frac{2}{n})$\\
+    \begin{tabular}{|c|c|}
+      \hline
+      Easier & Harder\\
+      \hline
+      Easy 1) $(\frac{ab}{c}) = (\frac{a}{c})(\frac{b}{c})$ & \\
+      \hline
+      Easy 2) $(\frac{a}{bc}) = (\frac{a}{b})(\frac{a}{c})$ & \\
+      \hline
+      $(\frac{a}{b})$ is completely multiplicative in $a$ & \\
+      and separately in $b$.A lot like dot products & \\
+      \hline
+      & Hard 1)$(\frac{-1}{n}) = (-1)^{\frac{n-1}{2}}$ for odd $n$.\\
+      \hline
+      & Hard 2)$(\frac{2}{n}) = (-1)^{\frac{n-1}{8}}$ for odd $n$.\\
+      \hline
+      & Hard 3)Jacobi's reciprocity: $(\frac{a}{b})(\frac{b}{a}) = 
+      (-1)^{\frac{a-1}{2}\frac{b-1}{2}}$\\
+      \hline
+    \end{tabular}\\
+    Why is Easy 2 true?\\
+    It's engineered by definition.\\
+    Prime factors of gc = (prime factors of b)(prime factors of c), so
+    expanding $(\frac{a}{bc}$ gives same thing as expected: $(\frac{a}{b})$ and
+    $(\frac{a}{c})$.\\\\
+    Why is Easy 1 true?\\
+    $(\frac{ab}{p}) = (\frac{a}{p})(\frac{b}{p})$ is true for legendre symbol,
+    so and these are factors of $(\frac{ab}{p})$, $(\frac{a}{p})$ and 
+    $(\frac{b}{bp})$.\\
+    So, let's check in $\mathbb{Z}$\\
+    \begin{tabular}{c |c |c}
+      $p$ & $\frac{p^2 - 1}{8}$ & $(-1)^{\frac{p^2 - 1}{8}}$\\
+      1 & 0 & 1\\
+      3 & 1 & -1\\
+      5 & 3 & -1\\
+      7 & 6 & 1\\
+    \end{tabular}
+    $(\frac{-1}{p}) = (-1)^{\frac{p-1}{2}}$ and $(\frac{p}{q})
+    (\frac{q}{p}) = (-1)^{\frac{p-1}{2}\frac{q-1}{2}}$ are other
+    versions of the same trick. $p,q$ only matter $\mod 4$.\\
+    \begin{proof} Hard 3\\
+      $(\frac{a}{b})$ by Easy 1 and Easy 2 is "bimultiplicative", just like an
+      inner products is bilinear. $\langle{a}{b}\rangle = (\frac{a}{b})
+      (\frac{b}{a})$ is also bimultiplicative just like an $i,p$ is determined 
+      by its values on a basis (which you make into a matrix).\\
+      $\langle\frac{a}{b}\rangle$ is determined by its values on primes.\\
+      $\langle\frac{p}{q}\rangle = (-1)^{\frac{p-1}{2}\frac{q-1}{2}}$\\
+      So, $\langle\frac{a}{b}\rangle = \left[ \frac{a}{b} \right]$ if
+      $\left[ \frac{a}{b} \right]$ is 1) bimultiplicative too and 2) has
+      the same matrix.\\
+      Let $\left[ \frac{a}{b} \right] = (-1)^{\frac{a-1}{2} \frac{b-1}{2}}$\\
+      Same matrix when $a = p$, $b = q$? Yes!\\
+      Is it bimultiplicative? \\
+        Is it true that $\left[\frac{ab}{c}\right] = \left[\frac{a}{c}\right]
+        \left[\frac{b}{c}\right]$ and some on the other side? Yes, just 
+        check all eight cases $\mod 4$\\
+    \end{proof}
+    This is really a proof by induction that $\langle\frac{a}{b}\rangle =
+    (\frac{a}{b})(\frac{b}{c}) = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}$ using
+    easy 1 and easy 2.\\
+    $\langle \frac{ab}{c} \rangle = \langle\frac{a}{c}\rangle 
+    \langle\frac{b}{c} \ldots$\\\\
+    $(\frac{2}{n}) = (-1)^{\frac{n^2 - 1}{8}}$ is the same plan: Both sides
+    are multiplicative in $n$ and when $n$ is prime.\\\\
+    $\frac{a}{n}$ vs. Is $a$ a square mod n?\\
+    Say $n = p^2$ where $(\frac{a}{p^2}) = (\frac{a}{p})^2 = 1$, so... $a$ is
+    not involved at all and we don't know whether $a$ is a quadratic residue
+    or not.\\\\
+    Let's say that $n$ is square-free\\
+    $n = p_1p_2 \ldots p_k$ with all primes being different.\\
+    $a \equiv x^2 \mod n$ iff $(\frac{a}{p_j}) = 1$ for each prime factor.\\
+    $(\frac{a}{n} = 1$ iff $(\frac{a}{p_j} = -1$ for an even number of prime
+    factors.\\
+

@@ -1,0 +1,67 @@
+\section*{2/18}
+  \subsection*{Midterm question 1}
+    $\ldots 777000_{10} = 1000 * \ldots 777_{10}$\\
+  \subsection*{$p$-addic/$n$-addic convergence}
+    of sequences or series\\
+    $\lim_{k \to \infty} x_k = x$ and $x_k, x \in \mathbb{Z}_p$ or 
+    $\mathbb{Z}_n$ means $\lim_{k \to \infty} d(x_k, x) = 0$ where
+    $d(a,b) = 2^{-l}$ where $p^l$ or $n^l | a - b$ and $p^{l + 1}$ or
+    $n^{l + 1} \not| a - b$.\\\\
+  \underline{Example}:\\
+    $a = 2375008$\\
+    $b = 1375008$\\
+    $d_{\mathbb{R}}(a,b)= 10^6 = $ a lot\\
+    $d_{10}(a,b) = 2^{-6} = $ small. It converges 10-addicly.\\
+  \subsection*{Geometryic series formula}
+    $\sum_{k = 0}^{\infty} ba^k = \frac{b}{1 - a}$\\
+    Why don't we just test it out in 10-addictly?\\
+    $\sum_{k = 0}^{\infty} 7*10^k = \frac{7}{1 - 10} = -\frac{7}{9}$, which
+    is what it is! 10-adically right n-addic criterion is $d_n(a,0) = a$ 
+    $\forall a$.\\
+  \begin{theorem}: $e$ is irrational where $e = 2 + \frac{1}{2} + \frac{1}{6}
+  + \ldots = \sum_{n = 0}^{\infty} \frac{1}{n!}$
+  \end{theorem}
+  \begin{proof}
+    Use "factorial base":
+    $xxxxxxxxxxxxx.xxxxxxxx\ldots$\\
+    Everything to the left of the decimal point is base 10.\\
+    First place right of decimal point is base 2, next is base 3, next is
+    base 4.\\
+    On the other hand, $e = 2.11111\ldots = 2 + \frac{1}{2} + \frac{1}{6} + 
+    \frac{1}{24} + \ldots$\\
+    On the other hand, if $\frac{a}{b}$ is rational, then $\frac{a}{b} = 
+      \frac{c}{b!}$ which terminates. e.g. $\frac{1}{5} = \frac{24}{120} = 
+      .0104_{fac}$.\\
+    Assume that an estimate. Let $\alpha \in \mathbb{R}$ and consider 
+    approximating $\alpha$ by $\frac{a}{b}$ except for $\alpha = \frac{a}{b}$\\
+    $\alpha \approx \frac{a}{b}$, but $\alpha \not=\frac{a}{b}$\\
+  \end{proof}
+  \begin{theorem}
+    If $\alpha \in \mathbb{Q}$, then $|\alpha - \frac{a}{b} > \frac{c}{b}$
+    depends on $\alpha$, but not $b$.\\
+    $|\alpha - \frac{a}{b}| = $ small with $b$ not too big is called diophantine
+    approximation.\\
+    In our case, $| \alpha - \frac{a}{b}| = \Omega(\frac{1}{b})$ where
+    $\Omega(f(n))$ means $\ge cf(n)$.
+  \end{theorem}
+  \begin{proof}
+    $\alpha = \frac{x}{y}$
+    \begin{eqnarray*}
+      |\frac{x}{y} - \frac{a}{b}| & = & \frac{|xb - ay|}{yb}\\
+      &\ge& \frac{1}{yb}\\
+      & = & \Omega(\frac{1}{b})
+    \end{eqnarray*}
+  \end{proof}
+  Back to the proof
+  \begin{proof}
+    How well does $e$ work in $|\alpha - \frac{a}{b}|$?\\
+    To well\\
+    $S_n = \sum_{k = 0}^{n} \frac{1}{k!} = \frac{a_n}{n!}$ is a close
+    rational.\\
+    $e - s_n| = \frac{1}{(n+1)!} + \frac{(n+2)!} + \ldots < \frac{2}{n-1}! 
+    \not= \Omega(\frac{1}{n!})$, so $e \not\in \mathbb{Q}$.
+  \end{proof}
+  \begin{theorem}
+    If $\alpha$ is algebraic of degree $n$, then $|\alpha - \frac{a}{b}|
+     = \Omega(\frac{1}{b^n})$
+  \end{theorem}

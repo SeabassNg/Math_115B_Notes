@@ -1,0 +1,72 @@
+\section*{3/11}
+  \begin{theorem}
+    $x^4 + y^4 = z^4$ has no non-trivial solutions.
+  \end{theorem}
+  Hard to prove alone.\\
+  \begin{theorem}
+    $x^4 + y^4 = z^2$ and $4x^4 + y^2 = z^4$ has no trivial solutions.
+  \end{theorem}
+  Proof is by "infinite descent", i.e. solution implies a smaller solution.\\
+  Basically, it's a contraction in the form of an induction or "attack
+  the smallest counterexample."\\\\
+  These are Pythagorean tripes, $(x^2, y^2, z)$ and $(2x^2, y, z^2)$.\\
+  In $x^4 + y^4 = z^2$, can we make $(x^2, y^2, z)$ a primitive triple?\\
+  $gcd(x^2, y^2) = 1 \leftrightarrow gcd(y^2, z) = 1 \leftrightarrow
+  gcd(x^2, z) = 1 \leftrightarrow$ primitive.\\\\
+  If $gcd(x^2, y^2) = d^2$, then $x' = \frac{x}{d}$, $y' = \frac{y}{d}$, and
+  $z' = \frac{z}{d^2}$.\\
+  Therefore, $(x^2, y^2, z)$ is primitive.\\
+  All primitive pythagoren triples are $odd^2 + even^2 = odd^2$.\\
+  Let's switch $x,y$ if necessary.\\
+  \begin{eqnarray*}
+    x^2 & = & m^2 - n^2\\
+    y^2 & = & 2mn\\
+    z & = & m^2 + n^2
+  \end{eqnarray*}
+  where $gcd(m,n) = 1$ and one of $m,n$ is odd, the other even and $x$ is
+  odd.\\
+  We also know that $n^2 + x^2 = m^2$ is another pythagorean triple, so $n$ 
+  has to be even and $m$ is odd.\\\\
+  Then, $y^2 = 2mn$. That means that $m \perp 2n$. This implies $m = s^2$
+  and $n = 2t^2$.\\
+  Combining them, I get $4t^2 + x^2 = s^4$ where $min(x,t,s) <
+  min(x,y,z)$.\\\\
+  Say we have $4x^4 + y^2 = z^4$\\
+  Could $z$ be even and $x$ be odd? Let's say no.\\\\
+  If $gcd(x,z) = d > 1$, then let $x' = \frac{x}{d}$, $z' = \frac{z}{d}$, and
+  $y' = \frac{y}{d^2}$ by induction, so $x \perp z$, so $x^2 \perp z^2$ and
+  $2x^2 \perp z^2$.\\
+  So, $(2x^2, y, z^2)$ is primitive by induction.\\
+  Now, we know that
+  \begin{eqnarray*}
+    2x^2 & = & 2mn\\
+    y & = & m^2 - n^2\\
+    z & = & m^2 + n^2\\
+  \end{eqnarray*}
+  Then, $x^2 = mn$. If $m \perp n$, then $m = s^2$ and $n = t^2$, so $z^2 = 
+  s^2 + t^2$.\\
+  \subsection*{Gaussian integers}
+    Motivation: If $x^2 + y^2 = z^2$, then $(x + iy)(x + iy) = z^2$.\\
+    If we could say $x + iy \perp x - iy$, then presumably $x + iy = 
+    (m+in)^2$, which is the formula for Pythagorean triples.\\\\
+    What does the relative prime for complex integers mean?\\
+    \begin{definition}
+      Let $\mathbb{Z}$ be the set of integers.\\
+      Let $\mathbb{C} \cong \mathbb{Z}[i]$ be the Gaussian integers. Gaussian
+      integers are $\{x + iy | x,y \in \mathbb{Z}\}$.
+    \end{definition}
+    $5 = (2 + i)(2 - i)$ in $\mathbb{Z}[i]$. 5 is not a Guassian prime.\\
+    $3 = i(-3i)$ is not a reasonable factorization. 3 does not factor to 
+    "shorter" numbers. It is a Gaussian prime.\\\\
+    \begin{definition}
+      1, -1, $i$, $-i$ are called units.\\
+      If $z \in \mathbb{Z}[i]$ does not factor except as $z = u \cdot
+      z'$, then it is a Gaussian prime.
+    \end{definition}
+    \begin{theorem}
+      \begin{enumerate}
+        \item $\mathbb{Z}[i]$ have unique factorization
+        \item The primes are $p \in \mathbb{Z}$ such that $p = 3 \mod 4$ and
+          $a + it$ where $a^2 + b^2 = p \equiv 1 \mod 4$
+      \end{enumerate}
+    \end{theorem}

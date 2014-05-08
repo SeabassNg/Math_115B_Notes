@@ -1,0 +1,84 @@
+\section*{2/27}
+  \subsection*{Continued fractions}
+    \underline{Example}:\\
+    $$
+      [1; 1, 1, 1, 1, \ldots]
+    $$
+    Estimates:
+    \begin{eqnarray*}
+      1 + \frac{1}{1} & = & 1\\
+      1 + \frac{1}{2} & = & \frac{3}{2}\\
+      1 + \frac{1}{\frac{3}{2}} & = & \frac{5}{3}\\
+      1 + \frac{1}{\frac{5}{3}} & = & \frac{8}{5}\\
+      & \vdots &
+    \end{eqnarray*}
+    This follows the fibonnaci sequence.\\
+    $$
+      1 + \frac{1}{\frac{a}{b}} = \frac{b+a}{a}
+    $$
+    Let's derive the limit independently.\\
+    If $[1;1, 1, 1, \ldots] = x$, then
+    $x = 1 + \frac{1}{x}$ and $ x > 1$, then $x^2 = x + 1$.\\
+    Therefore, $\frac{1 + \sqrt{5}}{2}$\\\\
+    Two important lessons from the example:
+    \begin{enumerate}
+      \item Always fibbonacci like recurrence for numerical denomination of
+        $C_k$
+      \item If continued fraction of $c$ is periodic, then it is a quadratic
+        equation for $x$.
+    \end{enumerate}
+    \begin{definition} $[a_0, a_1, \ldots]$ is a \underline{simple continued 
+      fractions} means $a_k \in \mathbb{Z}$. You can write it down for any 
+      values.\\
+    \end{definition} 
+   \underline{Example}: Not simple
+   $$
+    e + \frac{1}{\pi + \frac{1}{\sqrt{2}}} = [e; \pi, \sqrt{2}]
+   $$
+   \begin{lemma}
+    (Fibbonaccish theorem) Let $s_{-1} = 1$, $s_0 = a_0$, $s_k = a_ks_{k-1} +
+    s_{k-2}$, $t_{-1} = 0$, $t_0 = 1$, $t_k = a_kt_{k-1} + t_{k-2}$ where
+    $k \ge 1$. Then, $C_k = [a_0; a_1, \ldots, a_k] = \frac{s_k}{t_k}$.\\
+    $C_k$ may not be a simple continued fraction and the fraction is
+    sustanominal fraction.
+   \end{lemma}
+   \begin{theorem}
+    If $[a_0; a_1, \ldots, a_k]$ is simple, $\frac{s_k}{t_k}$ is lowest term
+    and $s_k$ and $t_k$ are integers.\\
+   \end{theorem}
+   \begin{proof}
+    By induction on $k$.\\
+    Suppose we know this for some $k$.\\
+    $$
+      C_{k+1} = [a_0, a_1, \ldots, a_{k +1}] = [a_0, a_1, \ldots, a_{k - 1}, a_k 
+      + \frac{1}{a_{k+1}}]
+    $$
+    Let $C_k'$ be the $k$th term of in the continued fraction.\\
+    \begin{eqnarray*}
+      C_k' & = & \frac{a_k' s_{k-1} + s_{k-2}}{a_k' t_{k-1} + t_{k-2}} = \frac{s_k'}{t_k'}\\
+      & = & \frac{(a_k + \frac{1}{a_{k+1}})s_{k-1} + s_{k-2}}{(a_k + \frac{1}
+      {a_k+1})t_{k-1} + t_{k-2}}\\
+      & = & \frac{a_ks_{k - 1} + s_{k - 2} + \frac{s_{k-1}}{a_{k+1}}}{a_kt_{k - 1} + t_{k - 2} + \frac{t_{k-1}}{a_{k+1}}}\\
+      & = & \frac{a_{k+1}s_k + s_{k - 1}}{a_{k+1}t_k + t_{k-1}}\\
+      & = & \frac{s_{k+1}}{t_{k+1}}
+    \end{eqnarray*}
+    We just need the base case and we proved this.
+   \end{proof}
+   \begin{theorem}
+    $$
+      s_kt_{k-1} - s_{k - 1}t_k = (-1)^{k-1}
+    $$
+    if $[a_0, a_1, \ldots, a_k]$ is simple.
+   \end{theorem}
+   From this theorem, we know that $gcd(s_k, t_k) = 1$ where $gcd{s_k}{t_k} = 
+   1$, $gcd(s_k, s_{k-1}i_ = 1$, $gcd(t_k, t_{k-1}) = 1$.\\
+   The proof of this theorem is done by induction too.\\\\
+   One of the goals we're after, all simple continued fractions converge. We
+   need the following lemma to prove it.\\
+   \begin{lemma}
+    $$
+      c_0 < c_2 < c_4 < \ldots < \ldots < c_5 < c_3 < c_1
+    $$
+    always happens in simple continuous fractions.
+   \end{lemma}
+   The proof of this lemma is done with the previous theorem.

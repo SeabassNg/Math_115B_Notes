@@ -1,0 +1,114 @@
+\section*{3/2}
+  \subsection*{Continued fraction}
+    $\alpha = [a_0, a_1, a_2, \ldots ]$\\
+    $c_k = \frac{s_k}{t_k}$. Somehow, found a recurrence for $s_k$, $t_k$
+    $\Rightarrow s_kt_{k-1} - s_{k-1}t_k = (-1)^{k - 1} 
+    \Rightarrow gcd(s_k, t_k) = 1$\\\\
+  \subsection*{Matrix/slope point of view}
+    A linear map or matrix on $\mathbb{R}^2$ takes lines to lines. Let's
+    take the lines through 0 and so, it takes slopes to slopes.\\
+    Say
+    $$
+      M = \left[ \begin{tabular}{c c} a & b\\ c&d\end{tabular}\right]
+    $$
+    $M$ takes slope $x$ to $\frac{c + dx}{a + bx}$\\
+    $$
+      \left[ \begin{tabular}{c c} a & b \\ c & d \end{tabular} \right]
+      \left[ \begin{tabular}{c} 1 \\ x \end{tabular} \right] =
+      \left[ \begin{tabular}{c} a + bx \\ c + dx \end{tabular} \right]
+    $$
+    A bit more standard:\
+    $$
+      M = \left[ \begin{tabular}{c c} d & c \\ b & a \end{tabular} \right]
+        \mapsto \frac{ax + b}{cx + d}
+    $$
+    This kind of function of $X$ is called a Mobius transformation.\\
+    A fractional functions is linear transformation or mapping.\\
+    When you compose two Mobius function, $f_1$, $f_2$, you should multiply
+    their matrices, you will get another Mobius function, $f_3$.\\
+    \underline{Note}: You can throw in the slope, $\infty$\\\\
+    \underline{Note}: Just so we don't confuse ourselves, we'll just have
+    the matrices $\left[ \begin{tabular}{c c} a & b \\ c & d \end{tabular} 
+    \right]$ map to the fractional linear equation, $\frac{ax + b}{cx + d}$.\\\\
+    If
+    $$
+      f(x) = \frac{ax + b}{cx + d}
+    $$
+    then $f(\infty) = \frac{a}{c}$ and
+    $$
+      \left[ \begin{tabular}{c c} a & b \\ c & d \end{tabular} \right]
+      \left[ \begin{tabular}{c} 1 \\ 0 \end{tabular} \right] = 
+      \left[ \begin{tabular}{c} a \\ c \end{tabular} \right]
+    $$
+    In other words, it is still included in the map.\\\\
+    So, how is this related to continued fractions?\\
+    Say,\\
+    $$
+      \alpha = [a_0; a_1, a_2, \ldots ]
+    $$
+    $$
+      C_k = [a_0; a_1, a_2, \ldots, a_k ]
+    $$
+    Let
+    $$
+      D_k = [a_1; a_2, a_3, \ldots, a_k]
+    $$
+    which is basically $C_k$ with $a_0$ chopped off and $a_i$ moved to 
+    $a_{i -1}$ or in other words, 
+    $$
+      C_k = a_0 + \frac{1}{D_k} = \frac{a_0D_k + 1}{1D_k + 0}
+    $$
+    In other words, it's a fractional linear transformation with matrix,
+    $$
+      \left[ \begin{tabular}{c c} $a_0$ & 1 \\ 1 & 0 \end{tabular} \right]
+    $$
+    $C_k$ is then the slope of
+    $$
+      \left[ \begin{tabular}{c c} $a_0$ & 1 \\ 1 & 0 \end{tabular} \right]
+      \left[ \begin{tabular}{c c} $a_1$ & 1 \\ 1 & 0 \end{tabular} \right]
+      \left[ \begin{tabular}{c c} $a_2$ & 1 \\ 1 & 0 \end{tabular} \right]
+      \ldots 
+      \left[ \begin{tabular}{c c} $a_k$ & 1 \\ 1 & 0 \end{tabular} \right]
+    $$
+    These matrices multiply to 
+    $$
+      \left[ \begin{tabular}{c c} $s_k$ & $s_{k-1}$ \\ $t_k$ & $t_{k-1}$
+      \end{tabular} \right]
+    $$
+    The determinant are all -1, so the determinant of $C_k$ is $(-1)^{k+1}$ or
+    $(-1)^{k-1}$.\\
+    Therefore, $s_kt_{k-1} - s_{k-1}t_k = (-1)^{k-1}$\\
+    The book's recurrence is
+    $$
+      \left[ \begin{tabular}{c c} $s_k$ & $s_{k-1}$ \\ $t_k$ & $t_{k-1}$\end{tabular} \right]
+      = \left[ \begin{tabular}{c c} $s_{k-1}$ & $s_{k-2}$ \\ $t_{k-1}$ & $t_{k-2}$\end{tabular} \right]\left[ \begin{tabular}{c c} $a_k$ & 1 \\ 1 & 0 \end{tabular} \right]
+    $$
+    This implicitly uses that matrix multiplication is associative.\\\\
+
+  \subsection*{Convergence of Convergents}
+    $$
+      \alpha = [a_0, a_1, \ldots ]
+    $$
+    except does the right side always converge?\\
+    \begin{eqnarray*}
+      C_0 & = & a_0\\
+      C_1 & = & a_0 + \frac{1}{a_1}\\
+      C_2 & = & a_0 + \frac{1}{a_1 + \frac{1}{a_2}}\\
+      &\vdots&
+    \end{eqnarray*}
+    $C_0 < $ all subsequent numbers in the sequence. \\
+    $C_1 > $ every subsequent numbers because $a_1 < [a_1, \ldots]$
+    $C_0 < $ all subsequent numbers in the sequence. \\
+    To summarize, $C_0 < C_2  < \ldots < \ldots < C_5 < C_3 < C_1$\\
+    $\lim C_{2k}$ exists and $\lim C_{2k + 1}$ exists. Are they equal?\\
+    They are equal iff $|C_k - C_{k +1}| \to 0$.\\\\
+    Let $C_k = \frac{s_k}{t_k}$\\
+    $$
+      |C_k - C_{k - 1}| = \frac{|s_kt_{k-1} - t_{k}s_{k-1}|}{t_kt_{k-1}} = 
+      \frac{1}{t_kt_{k-1}} \to 0
+    $$
+    $\alpha$ is between two consecutive partial continued fractions, so
+    $$
+      \alpha - C_k| < \frac{1}{t_k t_{k+1}} < \frac{1}{t_k^2}
+    $$
+    So, we just got Dirchlet's thoerem.

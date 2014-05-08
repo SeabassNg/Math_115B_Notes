@@ -1,0 +1,76 @@
+\section*{1/7}
+  We looked at consequences of the primitive root theorem.\\
+  \fbox{
+    \begin{minipage}{7in}
+      \underline{Theorem}: 
+      \begin{enumerate}
+      \item If $p \equiv 1 \mod 4$, then $\mathbb{Z}/p$ has $i$ or solution to 
+      $x^2 \equiv -1 \mod p$.
+      \item If $p \equiv -1 \mod 4$, then $\mathbb{Z}/p$ does not have $i$.
+      \end{enumerate}
+    \end{minipage}
+  }\\
+  (1) eventually gets you $p = a^2 + b^2$ if $p \equiv 1 \mod 4$ (and prime).\\
+  \underline{Note}: $n = 21 \not= a^2 + b^2$.\\
+  part (1) of the theorem also says that $p | n^2 + 1$ for some $n$.\\
+  (2) $\implies$ theorem below.\\
+  \fbox{
+    \begin{minipage}{7in}
+      \underline{Theorem}: $\exists \infty$ many primes that are $1 \mod 4$.
+    \end{minipage}
+  }\\\\
+  \fbox{
+    \begin{minipage}{7in}
+  \underline{Theorem}: $\infty$ many primes
+    \end{minipage}
+  }\\\\
+  \underline{Proof}: Suppose that there only exists $k$, a finite number, 
+  primes with $p_k$ being the largest prime..\\
+  Let $n = p_1p_2\ldots p_k$. Then, $3 \le n +1$ has some prime factors since
+  $n +1 > p_k$, so CONTRADICTION!!!!\\\\
+  \fbox{
+    \begin{minipage}{7in}
+  \underline{Theorem}: $\infty$ many primes that are equivalent to $3 \mod 4$
+    \end{minipage}
+  }\\\\
+  \underline{Proof}: Suppose that there only exists $k$, a finite number, 
+  primes that are equivalent to $3 \mod 4$ with $p_k$ being the largest.\\
+  Let $n = p_1p_2\ldots p_k$.\\
+  Let's look at $4n - 1$. Of course, it's equivalent to $3 \mod 4$, so not all
+  its prime factors are $1 \mod 4$ and none are $p_1, \ldots , p_k$\\
+  Pretty much the same as the one above.\\ \\
+  \underline{Not a Proof}: For primes that are equivalent to $1 \mod 4$.\\
+  Let $n = p_1p_2 \ldots p_k$.\\
+  Looking at $4n + 1$ or $n +1$ does not imply that that any of their factors are
+  $1 \mod 4$, although happily their factors aren't $p_1, \ldots p_k$\\
+  \underline{Real Proof}: Let $n = p_1p_2\ldots p_k$\\
+  Look at $4n^2 + 1$. None of its prime factors, $q$, are among $p_1, \ldots,
+  p_k$ want at least one $q$ to be $1 \mod 4$. Even better, they all are $q \not=
+  2$.\\
+  $q \not\equiv 3 \mod 4$ because as we said by part (2) of the theorem, if it
+  were, then $q \not| (2n)^2 + 1$ $\implies \infty$ many primes equivalent to
+  $1 \mod 4$.\\\\
+  \fbox{
+    \begin{minipage}{7in}
+  \underline{Theorem}: (prime number theorem) If $\pi(n)$ is the number of primes
+  les than $n$, then $\lim_{n \to \infty} \frac{\pi(n)}{n / \ln(n)}$
+  \end{minipage}
+  }\\\\
+  Let $\pi_{a_b}$ be the number of primes less than $n$ that are equivalent to
+  $a \mod b$.\\
+  For each $b$, there are $phi(b)$ interesting choices of $a$, namely $a \perp 
+  b$.\\\\
+  \fbox{
+    \begin{minipage}{7in}
+  \underline{Theorem(Dirichlet)}: If $a \perp b$, then $\lim_{n \to \infty} 
+  \frac{ \pi_{a,b}(n) }{\pi(n)} = \frac{1}{\phi(b)}$\\
+  I have heard that $\pi_{i,j+1}(n)$ and $\pi{3,4}(n)$ are "unbalanced" in the
+  sense $\pi_{3, 4}(n) > \pi_{1,4}(n)$ usually or always.
+  \end{minipage}
+  }\\\\\\
+  \fbox{
+    \begin{minipage}{7in}
+  \underline{Theorem}: $\exists$ a primitive root $\mod p$\\
+  \end{minipage}
+  }\\\\
+  

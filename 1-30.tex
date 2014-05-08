@@ -1,0 +1,56 @@
+\section*{1/30}
+  Quadratic reciprocity thm:\\
+  1st criterion and definition\\
+  "$a$ on $p$" $(\frac{a}{p}) = \begin{cases} 1 & \text{ if there exists $x$, a 
+  solution to $x^2 \equiv a^e$}\\ -1 & \text{ if not} \\ 0 & \text{ if p | a} 
+  \end{cases}$\\
+  2nd criterion is Euler's lemma: $(\frac{a}{p}) \equiv a^{\frac{p-1}{2}} \mod 
+  p$\\
+  3rd criterion is Gauss' lemma: $(\frac{a}{p}) = (-1)^s$ where $s$ is the
+   number of left-half residues, $1 \le j \le \frac{p-1}{2}$, such that
+   $a_j$ is the right half, $\frac{p+1}{2} \le a_j \mod p \le p-1$\\\\
+ \begin{proof} 
+  Compare two products mod $p$.\\
+  $x \equiv 1 \times 2 \times \ldots \times \frac{p-1}{2} \mod p$\\
+  $y \equiv a \times (2a) \times (3a) \times \ldots \times ((\frac{p-1}{2})a)
+  \mod p$\\
+  $\frac{y}{x}$ is, 1st of all, defined on mod $p$ ($p \not| x$).\\
+  $\frac{y}{x} \equiv a \times a \times \ldots \times a \equiv 
+  a^{\frac{p-1}{2}} \equiv (\frac{a}{p})$\\
+  $s$ is the number of left-half $j$'s with $a_j$ is the half.\\
+  Let $G = \{ a, 2a, \ldots, \frac{p-1}{2} a\}$, all of which has a different
+  equivalence mod $p$.\\
+  $|G| = \frac{p-1}{2}$. No two elements of $G$ are negatives either.
+  $a_j \equiv -ak$, then $j \equiv -k$ can't happen if $j,k$ are left half.\\
+  this happens $s$ times, so $\frac{y}{x} \equiv (-1)^s$ also.\\
+  $(\frac{a}{p} \equiv \frac{y}{x} \equiv (-1)^s$
+ \end{proof} 
+ \underline{Example}: $a = 3$, $p=11$.\\
+ $x \equiv 1 \times 3 \times 3 \times 4 \times 5$\\
+ $y \equiv 3 \times 6 \times 9 \times 1 \times 4 \equiv 3 \times (-5) \times 
+ (-2) \times 1 \times 4 \equiv x \times (-1)^s$ with $s = e$ in this case.\\
+ \begin{theorem}
+  Using Gauss's Lemma,\\
+  $(\frac{2}{p}) = \begin{cases} 1 & \text{ if $p \equiv 1$ or $7 \mod 8$}\\
+  -1 & \text{otherwise} \end{cases}$\\
+  $(\frac{-1}{p}) = \begin{cases} 1 & \text{ if $p \equiv 1 \mod 4$}\\
+  -1 & \text{if $p \equiv 3 \mod 4$} \end{cases}$\\
+ \end{theorem}
+ \begin{proof}
+  $(\frac{-1}{p}) = (-1)^s$ where $s$ is $s = \frac{p-1}{2}$ in this case $=
+  (-1)^{\frac{p-1}{2}}$\\\\
+  $(\frac{2}{p}) = (-1)^s$ \\
+  i.e. $(\frac{2}{11}) =$ number of $1 \le j \le \frac{p-1}{2}$, such that
+  $2j | \frac{p-1}{2}$ and $2j < p$\\
+  Let $s$ be the number of $\frac{p}{2} < 2j < p$ where $p$ is odd.\\
+  Then, the number of $2j < p$ is $\frac{p-1}{2}$ which is even if $p \equiv 1
+  \mod y$ and odd if $p \equiv 3 \mod 4$\\
+  Then, the number of $2j < \frac{p-1}{2}$ is $\lfloor\frac{p-1}{4}\rfloor$ 
+  which is even if $p \equiv  \text{odd} \mod 8$ and odd otherwise.\\
+  $s \equiv 0$ if $p \equiv 1 \text{ or } 7 \mod 8$ and $1$ if $p \equiv 
+  3 \text{ or } 5 \mod 8$
+ \end{proof}
+ \begin{lemma}: Gauss Lemma\\
+    $(\frac{a}{p}) = (-1)^s$ where $s \equiv \sum_{j=1}^{p-1} \lfloor
+    \frac{2a_j}{p} \rfloor \mod 2$
+ \end{lemma}
